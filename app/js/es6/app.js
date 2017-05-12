@@ -1,3 +1,7 @@
-(()=> {
-    console.log('i am es6 compiler');
+(() => {
+    $('.owl-carousel').owlCarousel({
+        center: true,
+        items: 2,
+        startPosition: 1
+    });
 })();

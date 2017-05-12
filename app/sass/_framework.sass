@@ -1,12 +1,22 @@
+@import "compass/reset"
 @import "mixins/mixins"
 
-$framework: mb10 mb20 mb30 mr15
+$framework: mb10 mb20 mb30 mr15 mr10 mr5
 +generate-framework($framework)
 
 .display-flex
   display: flex
 
+.flex-middle
+  justify-content: space-between
+
 .green-button
   color: #fff
   background: #000
   border-radius: 5px
+
+.fz12
+  font-size: 12px
+
+.fz16
+  font-size: 16px
