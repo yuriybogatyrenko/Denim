@@ -1,0 +1,8 @@
+{
+  "name": "gulp_project",
+  "version": "0.1.15",
+  "description": "Gulp project builder",
+  "author": "qube.kz",
+  "dependencies": {
+  }
+}
