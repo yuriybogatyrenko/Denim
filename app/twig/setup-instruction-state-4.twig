@@ -1,0 +1,139 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Отзывы{% endblock %}
+
+{% set support = 'false' %}
+
+{% block content %}
+
+    <div class="app-wrapper">
+
+        <section class="app mb15">
+            <div class="container pt15">
+                <div class="app__title app-title mb10">
+                    <div class="app-title__left mr10">
+                        <i class="fri fri_app-logo-70"></i>
+                    </div>
+                    <div class="app-title__right">
+                        <p class="fz17 fw500">Denim by Золушка project</p>
+                        <p class="fz14 mb10">By Dornoom LP</p>
+                        <div class="app-statistic">
+                            <div class="app-statistic__downloads mr15">
+                                <i class="fri fri_downloads mr5"></i>
+                                <span class="fz13 text-gray">334 455</span>
+                            </div>
+                            <div class="app-statistic__reviews">
+                                <i class="fri fri_reviews mr5"></i>
+                                <span class="fz13 text-gray">987</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="app-version fz12 text-center mb15">Текущая версия 5.10.0, обновлено 6 мая 2017 г.</p>
+                <p class="app-install text-center"><a class="button button_persian-green" href="#">Установить</a></p>
+            </div>
+        </section>
+
+        <section class="app-info mb15">
+            <div class="container">
+                <p class="fz16 text-signal-black mb10">Denim создан для тех, кто ищет честный формат отношений и готов закрывать глаза на формальности. </p>
+                <div class="read-more hidden mb15">
+                    <div class="read-more__wrapper">
+                        <p class="fz14 text-gray mb8">Мы сделали знакомства без обязательств для красивых девушек и успешных мужчин максимально быстрыми и удобными. Это стало возможным благодаря строгой модерации девушек, а также «клубной системе» для представителей сильного пола (доступ для мужчин к сервису платный). Данная политика отсекает любителей «поболтать» и позволяет привлечь к ресурсу только тех, кто ищет реальные знакомства и свидания.</p>
+                        <p class="fz14 text-gray mb8">В DENIM нет никаких скрытых и обязательных подписок. Пользуйтесь DENIM только тогда, когда вам это нужно!</p>
+                        <p class="fz14 text-gray mb8">DENIM от сервиса «Золушка project» — это уже зарекомендовавший себя дейтинг для по-настоящему красивых девушек, ищущих успешных мужчин, которые хотят тратить деньги на достойные подарки. По-другому таких девушек также называют «содержанки».</p>
+                        <p class="fz14 text-gray mb8">Нужен спонсор, друзья, собеседник или собеседница на вечер, хотите пойти на свидание, найти любовь? Ищите интимные встречи вдвоем, знакомства для интима (они же секс знакомства), знакомства онлайн, любовные игры, виртуальный секс, серьезные или необременительные отношения по расчету с интересным вам человеком? Характер общения определяете только вы! </p>
+                        <p class="fz14 text-gray mb8">Являетесь сторонником free love, муж или супруга надоели, хотите завести интрижку на стороне, думаете, что ваш принц или та самая девушка вас еще где-то ждет, но рулетка с приложениями, предлагающими знакомства по геолокации, не для вас? Тогда скачивайте DENIM! </p>
+                        <p class="fz14 text-gray mb8">Отправляйте сообщения, фото, делитесь своими желаниями и реализуйте их в жизни, находите подходящие пары в вашем городе. </p>
+                        <p class="fz14 text-gray">Иконка приложения не вызовет у окружающих лишних вопросов; доступ в приложение защищен кодом-паролем. </p>
+                    </div>
+
+                </div>
+                <p class="js-read-more-button title title_readmore text-center"><span class="pointer">Читать далее</span></p>
+            </div>
+        </section>
+
+        <section class="screenshots mb15">
+            <div class="container container_carousel">
+                <div class="screenshots-slider owl-carousel">
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews mb15">
+            <div class="container">
+                <p class="fz16 fw700 mb15">Отзывы</p>
+                <div class="reviews__item">
+                    <div class="review-header">
+                        <div class="review-header__photo mr7">
+                            <img class="round round28x28" src="images/nickolai.png" alt="">
+                        </div>
+                        <div class="review-header__info">
+                            <div class="review-header__author mb5">Николай Рудаков</div>
+                            <div class="review-header__rating">
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star-gray"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__body">
+                        Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит
+                    </div>
+                </div>
+                <div class="reviews__item">
+                    <div class="review-header">
+                        <div class="review-header__photo mr7">
+                            <img class="round round28x28" src="images/aleksei.png" alt="">
+                        </div>
+                        <div class="review-header__info">
+                            <div class="review-header__author mb5">Алексей Коротаев</div>
+                            <div class="review-header__rating">
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star-gray"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__body">
+                        Справедливости ради надо скзаать , что за свои деньги пусть и не такие малеьнькие по сравнению с другими сервисами получаешь вполне себе внятный продукт про знакомства без обязательств.
+                    </div>
+                </div>
+                <div class="reviews__item">
+                    <div class="review-header">
+                        <div class="review-header__photo mr7">
+                            <img class="round round28x28" src="images/dinara.png" alt="">
+                        </div>
+                        <div class="review-header__info">
+                            <div class="review-header__author mb5">Dinara Murzagulova</div>
+                            <div class="review-header__rating">
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star mr7"></i>
+                                <i class="fri fri_star-gray"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__body">
+                        Узнала про этот продукт через «Бешенство Машки», которая его рекламировала. Доверяю ей во многих вопросах, поэтому скачала и сейчас хочу посоветовать тем девочкам, которые попали в тяжелую ситуацию как я (пару месяцев была вынуждена уйти с работы и денег вообще не было). Мужчины стали помогать, на этом сервисе много таких, причем вполне себе симпатичных, для которых нужно чуть больше чем просто знакомства…
+                    </div>
+                </div>
+                <p class="title down-line text-center"><span class="default-link pointer js-open-popup" data-open-popup="all-reviews">Читать все</span></p>
+            </div>
+        </section>
+
+    </div>
+
+
+{% endblock %}

@@ -16,15 +16,20 @@
 <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<header>
+<header class="header">
     <div class="container container_pink">
-        <div class="header">
+        <div class="header-flex">
+            {% if support == 'true' %}
+                <a href="#"><i class="header__back"></i></a>
+            {% endif %}
             <div class="header__logo">
                 <p class="logo-title text-white fz36 text-center">Denim</p>
             </div>
-            <div class="header__subtext">
-                <p class="fz18 text-white text-center">Только красивые девушки и успешные мужчины</p>
-            </div>
+            {% if support == 'false' %}
+                <div class="header__subtext">
+                    <p class="fz18 text-white text-center">Только красивые девушки и успешные мужчины</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 </header>

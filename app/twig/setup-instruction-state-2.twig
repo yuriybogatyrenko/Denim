@@ -1,0 +1,119 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Подробная инструкция установки приложения Denim{% endblock %}
+
+{% set support = 'false' %}
+
+{% block content %}
+
+    <div class="app-wrapper">
+
+        <section class="app mb15">
+            <div class="container pt15">
+                <div class="app__title app-title mb10">
+                    <div class="app-title__left mr10">
+                        <i class="fri fri_app-logo-70"></i>
+                    </div>
+                    <div class="app-title__right">
+                        <p class="fz17 fw500">Denim by Золушка project</p>
+                        <p class="fz14 mb10">By Dornoom LP</p>
+                        <div class="app-statistic">
+                            <div class="app-statistic__downloads mr15">
+                                <i class="fri fri_downloads mr5"></i>
+                                <span class="fz13 text-gray">334 455</span>
+                            </div>
+                            <div class="app-statistic__reviews">
+                                <i class="fri fri_reviews mr5"></i>
+                                <span class="fz13 text-gray">987</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="app-version fz12 text-center mb15">Текущая версия 5.10.0, обновлено 6 мая 2017 г.</p>
+                <p class="app-install text-center"><a class="button button_persian-green" href="#">Установить</a></p>
+            </div>
+        </section>
+
+        <section class="technical-problem mb15">
+            <div class="container container_lightest-yellow text-center pt20 pb15">
+                <i class="fri fri_ggl-play mb15"></i>
+                <p class="text-darkest-green fz13">По техническим причинам приложение для скачивания через Google Play временно недоступно, ниже Вы найдете подробные инструкции как установить Denim на свой смартфон.</p>
+            </div>
+        </section>
+
+        <section class="instruction mb15">
+            <div class="container">
+                <p class="fz16 fw700 mb8">Как скачивать приложения не из Google Play?</p>
+                <p class="fz14 mb8">Чтобы устанавливать приложения не только из Google Play, разрешите скачивание из неизвестных источников:</p>
+                <ul class="instruction-list mb8">
+                    <li class="instruction-list__item ml30 pl10">Откройте настройки устройства Настройки.</li>
+                    <li class="instruction-list__item ml30 pl10">В разделе "Личные данные" выберите Безопасность.</li>
+                    <li class="instruction-list__item ml30 pl10">В разделе "Администрирование устройства" разрешите установку приложений из неизвестных источников</li>
+                </ul>
+                <p class="fz14 mb8">После скачивания приложения (файл называется: denim-app.apk) найдите его в шторке уведомлений или перейдите в <a class="default-link text-persian-green" href="#">загрузки</a> и нажмите на него.</p>
+                <p class="fz14 mb8">Далее следуйте инструкциям на экране</p>
+                <div class="flex mb15">
+                    <p class="flex__left-item fz14 mr10">Готово! Приложение успешно установлено! Вы можете найти значок приложения на Вашем рабочем столе.</p>
+                    <i class="fri fri_app-logo-60"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="detailed-instruction mb15">
+            <div class="container">
+                <p class="fz16 fw700 mb8">Подробная инструкция с картинками</p>
+                <p class="fz14 mb8">Вам необходимо перейти в настройки устройства, это можно сделать опустив панель уведомлений (шторку) вниз и в правом верхнем углу нажать на значок шестеренки или перейти в настройки из самого уведомления.</p>
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-1.jpg" alt="">
+                <p class="fz14 mb8">Если Вы выберите первый способ, то Вам нужно зайти в пункт «Безопасность и отпечаток пальца».</p>
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-2.jpg" alt="">
+                <p class="fz14 mb8">Прокрутите список до пункта «Неизвестные источники». Поставьте галочку напротив этого пункта.</p>
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-3.jpg" alt="">
+                <p class="fz14 mb8">Появится предупреждение о том, что это небезопасно. Необходимо согласиться.</p>
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-4.jpg" alt="">
+                <p class="fz14 mb8">Теперь установка приложений из неизвестных источников на android разрешена.</p>
+                <p class="fz14 mb8">Чтобы найти файл, откройте приложение «Файлы» или любой другой файловый менеджер и найдите там denim-app.apk.</p>
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-5.jpg" alt="">
+                <img class="detail-instruction__image mb15" src="images/detail-instruction-6.jpg" alt="">
+                <p class="fz14 mb8">Либо найдите файл в шторке уведомлений.</p>
+                <div class="down-line mb15"><img class="detail-instruction__image" src="images/detail-instruction-7.jpg" alt=""></div>
+                <p class="title down-line text-center mb15"><a class="default-link" href="#">Yandex store</a></p>
+                <p class="title down-line text-center mb15"><span class="default-link js-open-popup pointer" data-open-popup="technical-support">Обратиться в поддержку</span></p>
+            </div>
+        </section>
+
+        <section class="app-info mb15">
+            <div class="container">
+                <p class="fz16 text-signal-black mb10">Denim создан для тех, кто ищет честный формат отношений и готов закрывать глаза на формальности. </p>
+                <div class="read-more hidden mb15">
+                    <div class="read-more__wrapper">
+                        <p class="fz14 text-gray mb8">Мы сделали знакомства без обязательств для красивых девушек и успешных мужчин максимально быстрыми и удобными. Это стало возможным благодаря строгой модерации девушек, а также «клубной системе» для представителей сильного пола (доступ для мужчин к сервису платный). Данная политика отсекает любителей «поболтать» и позволяет привлечь к ресурсу только тех, кто ищет реальные знакомства и свидания.</p>
+                        <p class="fz14 text-gray mb8">В DENIM нет никаких скрытых и обязательных подписок. Пользуйтесь DENIM только тогда, когда вам это нужно!</p>
+                        <p class="fz14 text-gray mb8">DENIM от сервиса «Золушка project» — это уже зарекомендовавший себя дейтинг для по-настоящему красивых девушек, ищущих успешных мужчин, которые хотят тратить деньги на достойные подарки. По-другому таких девушек также называют «содержанки».</p>
+                        <p class="fz14 text-gray mb8">Нужен спонсор, друзья, собеседник или собеседница на вечер, хотите пойти на свидание, найти любовь? Ищите интимные встречи вдвоем, знакомства для интима (они же секс знакомства), знакомства онлайн, любовные игры, виртуальный секс, серьезные или необременительные отношения по расчету с интересным вам человеком? Характер общения определяете только вы! </p>
+                        <p class="fz14 text-gray mb8">Являетесь сторонником free love, муж или супруга надоели, хотите завести интрижку на стороне, думаете, что ваш принц или та самая девушка вас еще где-то ждет, но рулетка с приложениями, предлагающими знакомства по геолокации, не для вас? Тогда скачивайте DENIM! </p>
+                        <p class="fz14 text-gray mb8">Отправляйте сообщения, фото, делитесь своими желаниями и реализуйте их в жизни, находите подходящие пары в вашем городе. </p>
+                        <p class="fz14 text-gray">Иконка приложения не вызовет у окружающих лишних вопросов; доступ в приложение защищен кодом-паролем. </p>
+                    </div>
+
+                </div>
+                <p class="js-read-more-button title title_readmore text-center"><span class="pointer">Читать далее</span></p>
+            </div>
+        </section>
+
+        <section class="screenshots mb15">
+            <div class="container container_carousel">
+                <div class="screenshots-slider owl-carousel">
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image0.jpg" alt=""></div>
+                    <div class="screenshots-slider__image"><img src="images/slider-image1.jpg" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+{% endblock %}
