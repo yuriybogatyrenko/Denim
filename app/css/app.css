@@ -710,6 +710,25 @@ a {
   color: #b4b4be;
 }
 
+.not-filled {
+  border-bottom: 1px solid #fa2f5b;
+}
+.not-filled.support-form__select .placeholder {
+  color: #fa2f5b;
+}
+.not-filled::-webkit-input-placeholder {
+  color: #fa2f5b;
+}
+.not-filled::-moz-placeholder {
+  color: #fa2f5b;
+}
+.not-filled:-moz-placeholder {
+  color: #fa2f5b;
+}
+.not-filled:-ms-input-placeholder {
+  color: #fa2f5b;
+}
+
 input {
   border: none;
   outline: none;

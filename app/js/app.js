@@ -1,4 +1,4 @@
-(function() {
+var YOURAPPNAME = (function () {
 
     function YOURAPPNAME(doc) {
         var _self = this;
@@ -6,7 +6,7 @@
         _self.doc = doc;
         _self.window = window;
         _self.html = _self.doc.querySelector('html');
-        _self.body= _self.doc.body;
+        _self.body = _self.doc.body;
         _self.location = location;
         _self.hash = location.hash;
         _self.Object = Object;
@@ -15,7 +15,7 @@
         _self.bootstrap();
     }
 
-    YOURAPPNAME.prototype.bootstrap = function() {
+    YOURAPPNAME.prototype.bootstrap = function () {
         var _self = this;
 
         // Initialize window scollBar width
@@ -23,10 +23,10 @@
     };
 
     // Window load types (loading, dom, full)
-    YOURAPPNAME.prototype.appLoad  = function (type, callback) {
+    YOURAPPNAME.prototype.appLoad = function (type, callback) {
         var _self = this;
 
-        switch(type) {
+        switch (type) {
             case 'loading':
                 if (_self.doc.readyState === 'loading') callback();
 
@@ -38,7 +38,7 @@
 
                 break;
             case 'full':
-                _self.window.onload = function(e) {
+                _self.window.onload = function (e) {
                     callback(e);
                 };
 
@@ -49,7 +49,7 @@
     };
 
     // Detect scroll default scrollBar width (return a number)
-    YOURAPPNAME.prototype.scrollBarWidth = function() {
+    YOURAPPNAME.prototype.scrollBarWidth = function () {
         var _self = this,
             outer = _self.doc.createElement("div");
         outer.style.visibility = "hidden";
@@ -79,20 +79,20 @@
 
         var switchers = _self.doc.querySelectorAll('[data-switcher]');
 
-        if(switchers && switchers.length > 0) {
-            for(var i=0; i<switchers.length; i++) {
+        if (switchers && switchers.length > 0) {
+            for (var i = 0; i < switchers.length; i++) {
                 var switcher = switchers[i],
                     switcherOptions = _self.options(switcher.dataset.switcher),
                     switcherElems = switcher.children,
                     switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children;
 
-                for(var y=0; y<switcherElems.length; y++) {
+                for (var y = 0; y < switcherElems.length; y++) {
                     var switcherElem = switcherElems[y],
                         parentNode = switcher.children,
                         switcherTarget = switcherTargets[y];
 
-                    if(switcherElem.classList.contains('active')) {
-                        for(var z=0; z<parentNode.length; z++) {
+                    if (switcherElem.classList.contains('active')) {
+                        for (var z = 0; z < parentNode.length; z++) {
                             parentNode[z].classList.remove('active');
                             switcherTargets[z].classList.remove('active');
                         }
@@ -103,8 +103,8 @@
                     switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
                         return function (e) {
                             e.preventDefault();
-                            if(!elem.classList.contains('active')) {
-                                for(var z=0; z<parentNode.length; z++) {
+                            if (!elem.classList.contains('active')) {
+                                for (var z = 0; z < parentNode.length; z++) {
                                     parent[z].classList.remove('active');
                                     targets[z].classList.remove('active');
                                 }
@@ -119,26 +119,32 @@
         }
     };
 
-    YOURAPPNAME.prototype.str2json = function(str, notevil) {
+    YOURAPPNAME.prototype.str2json = function (str, notevil) {
         try {
             if (notevil) {
                 return JSON.parse(str
-                    .replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":';})
-                    .replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"';})
+                    .replace(/([\$\w]+)\s*:/g, function (_, $1) {
+                        return '"' + $1 + '":';
+                    })
+                    .replace(/'([^']+)'/g, function (_, $1) {
+                        return '"' + $1 + '"';
+                    })
                 );
             } else {
                 return (new Function("", "var json = " + str + "; return JSON.parse(JSON.stringify(json));"))();
             }
-        } catch(e) { return false; }
+        } catch (e) {
+            return false;
+        }
     };
 
-    YOURAPPNAME.prototype.options = function(string) {
+    YOURAPPNAME.prototype.options = function (string) {
         var _self = this;
 
-        if (typeof string !='string') return string;
+        if (typeof string != 'string') return string;
 
         if (string.indexOf(':') != -1 && string.trim().substr(-1) != '}') {
-            string = '{'+string+'}';
+            string = '{' + string + '}';
         }
 
         var start = (string ? string.indexOf("{") : -1), options = {};
@@ -146,7 +152,8 @@
         if (start != -1) {
             try {
                 options = _self.str2json(string.substr(start));
-            } catch (e) {}
+            } catch (e) {
+            }
         }
 
         return options;
@@ -176,19 +183,23 @@
         };
 
         plugin.openPopup = function (popupName) {
-            plugin.reachPopups.filter('[data-popup="' + popupName + '"]').addClass('opened');
-            plugin.bodyEl.css('overflow-y', 'scroll');
-            // plugin.topPanelEl.css('padding-right', scrollSettings.width);
-            plugin.htmlEl.addClass('popup-opened');
+            plugin.closePopup($('.js-popup.opened').attr('data-popup'));
+            var popup = plugin.reachPopups.filter('[data-popup="' + popupName + '"]');
+            popup.addClass('opened');
+            if (!popup.hasClass('js-small-popup')) {
+                plugin.bodyEl.css('overflow-y', 'scroll');
+                // plugin.topPanelEl.css('padding-right', scrollSettings.width);
+                plugin.htmlEl.addClass('popup-opened');
+            }
         };
 
         plugin.closePopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').removeClass('opened');
-            setTimeout(function () {
-                plugin.bodyEl.removeAttr('style');
-                plugin.htmlEl.removeClass('popup-opened');
-                plugin.topPanelEl.removeAttr('style');
-            }, 500);
+            // setTimeout(function () {
+            plugin.bodyEl.removeAttr('style');
+            plugin.htmlEl.removeClass('popup-opened');
+            plugin.topPanelEl.removeAttr('style');
+            // }, 500);
         };
 
         plugin.changePopup = function (closingPopup, openingPopup) {
@@ -204,10 +215,15 @@
             plugin.openPopupEl.on('click', function (e) {
                 e.preventDefault();
                 var pop = $(this).attr('data-open-popup');
-                plugin.openPopup(pop);
+                var popup = plugin.reachPopups.filter('[data-popup="' + pop + '"]');
+                if (popup.hasClass('opened'))
+                    plugin.closePopup(pop);
+                else
+                    plugin.openPopup(pop);
             });
 
             plugin.closePopupEl.on('click', function (e) {
+                e.preventDefault();
                 var pop;
                 if (this.hasAttribute('data-close-popup')) {
                     pop = $(this).attr('data-close-popup');
@@ -219,6 +235,7 @@
             });
 
             plugin.changePopupEl.on('click', function (e) {
+                e.preventDefault();
                 var closingPop = $(this).attr('data-closing-popup');
                 var openingPop = $(this).attr('data-opening-popup');
 
@@ -226,10 +243,23 @@
             });
 
             plugin.reachPopups.on('click', function (e) {
+                e.preventDefault();
                 var target = $(e.target);
                 var className = options.reachElementClass.replace('.', '');
                 if (target.hasClass(className)) {
                     plugin.closePopup($(e.target).attr('data-popup'));
+                }
+            });
+
+            $(document).click(function (e) {
+                var target = $(e.target);
+                if (
+                    !target.hasClass('js-popup')
+                    && !target.closest('.js-popup').length > 0
+                    && !target.hasClass('js-open-popup')
+                    && !target.closest('.js-open-popup').length > 0
+                ) {
+                    plugin.closePopup($('.js-popup.opened').attr('data-popup'));
                 }
             });
         };
@@ -240,86 +270,130 @@
         return plugin;
     };
 
-    var app = new YOURAPPNAME(document);
+    YOURAPPNAME.prototype.checkSelect = function (select) {
+        if (select.hasClass('js-select-education')) {
+            var str = select.find('option:selected').text();
+            if (str !== '') {
+                select.closest('.filter__section').find('.filter__inputs').append(
+                    '<span class="filter-input__item">' + str +
+                    '<input type="checkbox" checked="checked" class="hidden" name="education[' + str + ']" id="education" value="1" />' +
+                    '<i class="fri_filter-remove-input"></i>' +
+                    '</span>'
+                );
+            }
+        }
+    }
 
-    app.appLoad('loading', function () {
-        // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
-        (function ($) {
-            $(function () {
-                $('input, select').styler();
-            });
-        })(jQuery);
-    });
+    return YOURAPPNAME;
 
-    app.appLoad('dom', function () {
-        // DOM is loaded! Paste your app code here (Pure JS code).
-        // Do not use jQuery here cause external libs do not loads here...
+})();
 
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
-    });
+var app = new YOURAPPNAME(document);
 
-    app.appLoad('full', function (e) {
-        // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
-        // Please do not use jQuery ready state function to avoid mass calling document event trigger!
-        app.popups();
+app.appLoad('loading', function () {
+    // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
+    (function ($) {
+        $(function () {
+            $('input, select').styler();
+        });
+    })(jQuery);
+});
 
-        (function () {
-            $('.screenshots-slider').owlCarousel({
-                center: true,
-                items: 2,
-                startPosition: 1
-            });
+app.appLoad('dom', function () {
+    // DOM is loaded! Paste your app code here (Pure JS code).
+    // Do not use jQuery here cause external libs do not loads here...
 
-            $('.alternative-markets-slider').owlCarousel({
-                items: 3,
-                center: false,
-                startPosition: 1,
-                responsive : {
-                    0: {
-                        items: 3,
-                        center: true
-                    },
-                    450: {
-                        items: 4
-                    },
-                    550: {
-                        items: 5
-                    },
-                    650: {
-                        items: 6
-                    },
-                    768: {
-                        items: 7
-                    },
-                }
-            });
+    app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
+});
 
-        })();
+app.appLoad('full', function (e) {
+    // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
+    // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+    app.popups();
 
-        $('.js-read-more-button').click(function () {
+    (function () {
+        $('.screenshots-slider').owlCarousel({
+            center: true,
+            items: 2,
+            startPosition: 1
+        });
 
-            var readmore = $(this).prev(".read-more"),
-                readmoreHide = readmore.children(".read-more__wrapper"),
-                readmoreHeight = readmoreHide.height(),
-                $this = $(this);
-
-            if (readmore.hasClass("hidden")){
-                readmore.css('height', readmoreHeight);
-                setTimeout(function(){
-                    readmore.removeClass("hidden");
-                    $this.addClass("display-none");
-                }, 300)
+        $('.alternative-markets-slider').owlCarousel({
+            items: 3,
+            center: false,
+            startPosition: 1,
+            responsive: {
+                0: {
+                    items: 3,
+                    center: true
+                },
+                450: {
+                    items: 4
+                },
+                550: {
+                    items: 5
+                },
+                650: {
+                    items: 6
+                },
+                768: {
+                    items: 7
+                },
             }
         });
 
-        $('.js-button-support').click(function () {
-            var button = $(this),
-                select = button.closest(".support-form").children(".support-form__select").children(".jq-selectbox__select").children(".jq-selectbox__select-text placeholder"),
-                selectText = button.closest(".support-form").children(".support-form__select option:selected").text();
-            console.log(button);
-            console.log(select);
-        });
+    })();
 
+    $('.js-read-more-button').click(function () {
+
+        var readmore = $(this).prev(".read-more"),
+            readmoreHide = readmore.children(".read-more__wrapper"),
+            readmoreHeight = readmoreHide.height(),
+            $this = $(this);
+
+        if (readmore.hasClass("hidden")) {
+            readmore.css('height', readmoreHeight);
+            setTimeout(function () {
+                readmore.removeClass("hidden");
+                $this.addClass("display-none");
+            }, 300)
+        }
     });
 
-})();
+/*    $(".support-form__select").on('change', function (e) {
+        var $this = $(this);
+        console.log($this.val())
+        if ($this.val() === "") {
+            $this.addClass('not-filled');
+        } else {
+            $this.removeClass('not-filled');
+        }
+    });
+
+    $(".support-form__text").on('keyup focusout', function (e) {
+        var $this = $(this);
+        if ($this.val() === "") {
+            $this.addClass('not-filled');
+        } else {
+            $this.removeClass('not-filled');
+        }
+    })
+
+    $('.js-button-support').on('click', function (e) {
+        var $this = $(this),
+            select = $('.support-form__select'),
+            input = $('.support-form__text');
+        console.log(input.val());
+        if (input.val() === "") {
+            input.addClass('not-filled');
+        } else {
+            input.removeClass('not-filled');
+        }
+        if ((select.val() === "")) {
+            select.addClass('not-filled');
+        } else {
+            select.removeClass('not-filled');
+        }
+    })*/
+
+});
