@@ -330,9 +330,8 @@ var YOURAPPNAME = (function () {
             bindings: function () {
                 $(selector).each(function () {
 
-                    $(this).submit(function (e) {
+                    $(this).on("click", function (e) {
                         e.preventDefault();
-                        console.log("hi");
                         formSupport.update($(this));
                     })
                 });
@@ -340,11 +339,14 @@ var YOURAPPNAME = (function () {
             },
             update: function (bl) {
                 var $this = bl,
-                    selectBox = $this.children(".support-form__selectbox"),
+                    selectBoxWrapper = $this.find(".support-form__selectbox")
+                    selectBox = $this.find(".jq-selectbox"),
                     input = $this.children(".support-form__input"),
                     button = $this.find(".button-support");
 
-
+                if (selectBox.val() === ""){
+                    selectBoxWrapper.addClass("not-fill");
+                };
             }
         };
         if (selector) {
