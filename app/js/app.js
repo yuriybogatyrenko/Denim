@@ -270,20 +270,6 @@ var YOURAPPNAME = (function () {
         return plugin;
     };
 
-    /*YOURAPPNAME.prototype.checkSelect = function (select) {
-     if (select.hasClass('js-select-education')) {
-     var str = select.find('option:selected').text();
-     if (str !== '') {
-     select.closest('.filter__section').find('.filter__inputs').append(
-     '<span class="filter-input__item">' + str +
-     '<input type="checkbox" checked="checked" class="hidden" name="education[' + str + ']" id="education" value="1" />' +
-     '<i class="fri_filter-remove-input"></i>' +
-     '</span>'
-     );
-     }
-     }
-     };*/
-
     YOURAPPNAME.prototype.selectBox = function (selector) {
         var _self = this;
 
@@ -299,6 +285,7 @@ var YOURAPPNAME = (function () {
                 $(selector).on('change', function (e) {
                     e.preventDefault();
                     selectBox.update($(this));
+                    $(this).addClass('js-touched')
                     _self.formValidator().checkSelect($(this), $(this).closest('form'));
                 });
             },
@@ -347,15 +334,22 @@ var YOURAPPNAME = (function () {
                 }
             },
             buttonChange: function (type, form) {
+                var touched = true;
+
+                form.find('input, select').each(function () {
+                    if(!$(this).hasClass('js-touched'))
+                        touched = false;
+                });
+
+                if(touched === false)
+                    return;
+
                 var button = form.find('button[type="submit"]');
 
                 if(type){
-                    button.attr('disabled', true);
                     button.addClass("button_gray");
                     button.removeClass("button_persian-green");
-                }
-                else {
-                    button.removeAttr('disabled');
+                } else {
                     button.removeClass("button_gray");
                     button.addClass("button_persian-green");
                 }
@@ -394,6 +388,7 @@ app.appLoad('full', function (e) {
 
     $('input[name="email"]').focusout(function (e) {
         e.preventDefault();
+        $(this).addClass('js-touched');
         app.formValidator().checkInput($(this), $(this).closest('form'));
     });
 
