@@ -284,14 +284,7 @@ a
 .support-form__selectbox
 	position: relative
 	width: 100%
-	padding: 0 5px 5px
-	&::after
-		position: absolute
-		content: ''
-		bottom: 0
-		left: 0
-		width: 100%
-		border-bottom: 1px solid #e6e6eb
+
 	&::before
 		position: absolute
 		content: ''
@@ -320,6 +313,14 @@ a
 	font-size: 16px
 	width: 100%
 	color: #000000
+	padding: 0 5px 5px
+	&::after
+		position: absolute
+		content: ''
+		bottom: 0
+		left: 0
+		width: 100%
+		border-bottom: 1px solid #e6e6eb
 
 .support-form__select_placeholder
 	color: #b4b4be
@@ -341,7 +342,7 @@ a
 			color: #fa2f5b
 		&:-ms-input-placeholder
 			color: #fa2f5b
-	&.support-form__selectbox
+	&.support-form__select
 		&::after
 			border-color: #fa2f5b
 
