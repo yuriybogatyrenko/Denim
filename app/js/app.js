@@ -284,21 +284,25 @@ var YOURAPPNAME = (function () {
         }
     };*/
 
-    YOURAPPNAME.prototype.selectBox = function (selector) {
+    YOURAPPNAME.prototype.formSupportUpdate = function (selector) {
+        var selectBoxWrapper = $(this).find("support-form__selectbox"),
+            selectedOption = selectBoxWrapper.find("option:selected"),
+            selectedText = selectedOption.text(),
+            fakeSelect = selectBoxWrapper.find(".support-form__select");
+
+
         var selectBox = {
             init: function () {
                 selectBox.bindings();
-                $(".jq-selectbox").each(function () {
-                    selectBox.update($(this));
-                });
             },
             bindings: function () {
                 $(selector).on('change', function (e) {
                     e.preventDefault();
-                    selectBox.update($(this));
+                    app.formSupportValidate().validateSelect(selectBoxWrapper);
+                    console.log(selectedText);
                 })
             },
-            update: function (bl) {
+            /*update: function (bl) {
                 var $this = bl,
                     selectedOption = $this.find("option:selected"),
                     selectText = selectedOption.text(),
@@ -307,17 +311,18 @@ var YOURAPPNAME = (function () {
 
                 if (selectText === "") {
                     selectText = $this.attr('data-placeholder');
-                    fakeSelect.css('color', '#b4b4be');
+                    fakeSelect.addClass("support-form__select_placeholder");
 
                 } else {
-                    fakeSelect.css('color', '#000');
+                    fakeSelect.removeClass("support-form__select_placeholder");
+                    fakeSelect.addClass("support-form__select_not-filled");
                     if (selectBoxWrapper.hasClass("not-filled")) {
                         selectBoxWrapper.removeClass("not-filled");
                     }
                 }
 
                 fakeSelect.html(selectText);
-            }
+            }*/
         };
         if (selector) {
             selectBox.init();
@@ -325,25 +330,28 @@ var YOURAPPNAME = (function () {
         return selectBox;
     };
 
-    YOURAPPNAME.prototype.formSupport = function (selector) {
+
+    YOURAPPNAME.prototype.formSupportValidate = function () {
         var formSupport = {
             init: function () {
-                // formSupport.bindings();
-                $(selector).each(function () {
-                    formSupport.bindings($(this));
-                });
+                formSupport.bindings();
             },
             bindings: function () {
-                $(selector).each(function () {
-                    $(this).on("submit", function (e) {
-                        e.preventDefault();
-                        formSupport.update($(this));
-                    })
-                });
-
+                $(this).on("submit", function (e) {
+                    e.preventDefault();
+                    formSupport.validateSelect($(this));
+                })
             },
-            update: function (bl) {
-                var $this = bl,
+
+            validateSelect: function (bl) {
+                var selectBoxWrapper = bl,
+                    selectedOption = selectBoxWrapper.find("option:selected"),
+                    selectedText = selectedOption.text(),
+                    fakeSelect = selectBoxWrapper.find(".support-form__select");
+
+                console.log(selectedText);
+
+                /*var $this = bl,
                     selectBoxWrapper = $this.find(".support-form__selectbox"),
                     selectBox = $this.find(".jq-selectbox"),
                     input = $this.children(".support-form__input"),
@@ -370,12 +378,10 @@ var YOURAPPNAME = (function () {
                     button.removeAttr("disabled");
                     button.removeClass("button_gray");
                     button.addClass("button_persian-green");
-                }
+                }*/
             }
         };
-        if (selector) {
-            formSupport.init();
-        }
+        formSupport.init();
 
         return formSupport;
     };
@@ -402,9 +408,9 @@ app.appLoad('full', function (e) {
     // Please do not use jQuery ready state function to avoid mass calling document event trigger!
     app.popups();
 
-    app.selectBox(".jq-selectbox");
+    app.formSupportUpdate(".support-form");
 
-    app.formSupport(".support-form");
+    // app.formSupport(".support-form");
 
     (function () {
         $('.screenshots-slider').owlCarousel({

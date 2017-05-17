@@ -705,12 +705,24 @@ a {
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  color: #000000;
+}
+
+.support-form__select_placeholder {
+  color: #b4b4be;
+}
+
+.support-form__select_not-filled {
+  color: #fa2f5b;
 }
 
 .not-filled {
   color: #fa2f5b;
 }
 .not-filled.support-form__input {
+  border-bottom: 1px solid #fa2f5b;
+}
+.not-filled.support-form__input:focus {
   border-bottom: 1px solid #fa2f5b;
 }
 .not-filled.support-form__input::-webkit-input-placeholder {
