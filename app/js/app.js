@@ -302,14 +302,20 @@ var YOURAPPNAME = (function () {
                 var $this = bl,
                     selectedOption = $this.find("option:selected"),
                     selectText = selectedOption.text(),
-                    fakeSelect = $this.next(".support-form__select");
+                    fakeSelect = $this.next(".support-form__select"),
+                    selectBoxWrapper = $this.closest(".support-form__selectbox");
 
                 if (selectText === "") {
                     selectText = $this.attr('data-placeholder');
                     fakeSelect.css('color', '#b4b4be');
+
                 } else {
                     fakeSelect.css('color', '#000');
+                    if (selectBoxWrapper.hasClass("not-filled")) {
+                        selectBoxWrapper.removeClass("not-filled");
+                    }
                 }
+
                 fakeSelect.html(selectText);
             }
         };
@@ -322,15 +328,14 @@ var YOURAPPNAME = (function () {
     YOURAPPNAME.prototype.formSupport = function (selector) {
         var formSupport = {
             init: function () {
-                formSupport.bindings();
+                // formSupport.bindings();
                 $(selector).each(function () {
-                    formSupport.update($(this));
+                    formSupport.bindings($(this));
                 });
             },
             bindings: function () {
                 $(selector).each(function () {
-
-                    $(this).on("click", function (e) {
+                    $(this).on("submit", function (e) {
                         e.preventDefault();
                         formSupport.update($(this));
                     })
@@ -339,14 +344,33 @@ var YOURAPPNAME = (function () {
             },
             update: function (bl) {
                 var $this = bl,
-                    selectBoxWrapper = $this.find(".support-form__selectbox")
+                    selectBoxWrapper = $this.find(".support-form__selectbox"),
                     selectBox = $this.find(".jq-selectbox"),
                     input = $this.children(".support-form__input"),
+                    fakeSelect = $this.find(".support-form__select"),
                     button = $this.find(".button-support");
 
-                if (selectBox.val() === ""){
-                    selectBoxWrapper.addClass("not-fill");
+                if (selectBox.val() === ''){
+                    selectBoxWrapper.addClass("not-filled");
+                    // fakeSelect.css('color', '#fa2f5b');
+                } else {
+                    selectBoxWrapper.removeClass("not-filled");
                 };
+
+                if (input.val() === ''){
+                    input.addClass("not-filled");
+                } else {
+                    input.removeClass("not-filled");
+                }
+
+                if ((selectBox.val() === '') && (input.val() === '')){
+                    button.attr("disabled");
+                    button.addClass("button_gray");
+                } else {
+                    button.removeAttr("disabled");
+                    button.removeClass("button_gray");
+                    button.addClass("button_persian-green");
+                }
             }
         };
         if (selector) {
@@ -380,7 +404,7 @@ app.appLoad('full', function (e) {
 
     app.selectBox(".jq-selectbox");
 
-    // app.formSupport(".support-form");
+    app.formSupport(".support-form");
 
     (function () {
         $('.screenshots-slider').owlCarousel({
@@ -430,41 +454,4 @@ app.appLoad('full', function (e) {
             }, 300)
         }
     });
-
-    /*$(".support-form__selectbox").on('change', function (e) {
-        var $this = $(this);
-        console.log($this.val())
-        if ($this.val() === "") {
-            $this.addClass('not-filled');
-        } else {
-            $this.removeClass('not-filled');
-        }
-    });
-
-    $(".support-form__text").on('keyup focusout', function (e) {
-        var $this = $(this);
-        if ($this.val() === "") {
-            $this.addClass('not-filled');
-        } else {
-            $this.removeClass('not-filled');
-        }
-    })
-
-    $('.js-button-support').on('click', function (e) {
-        var $this = $(this),
-            select = $('.support-form__selectbox'),
-            input = $('.support-form__text');
-        console.log(input.val());
-        if (input.val() === "") {
-            input.addClass('not-filled');
-        } else {
-            input.removeClass('not-filled');
-        }
-        if ((select.val() === "")) {
-            select.addClass('not-filled');
-        } else {
-            select.removeClass('not-filled');
-        }
-    })*/
-
 });

@@ -10,11 +10,17 @@ body
 	font-size: 14px
 	line-height: 1.36
 	font-family: 'Roboto', sans-serif
+	height: auto
 
 *
 	box-sizing: border-box
 	margin: 0
 	padding: 0
+
+input, textarea, button
+	font-family: inherit
+	font-size: inherit
+	font-style: inherit
 
 button
 	border: none
@@ -61,6 +67,7 @@ a
 
 .container_carousel
 	padding-right: 0
+	padding-left: 0
 
 .flex
 	display: flex
@@ -74,6 +81,9 @@ a
 	display: flex
 	flex-direction: column
 	padding: 50px 0 40px
+
+.header-flex_popup
+	padding: 25px 0
 
 .header__logo
 	margin: 0 auto
@@ -115,11 +125,11 @@ a
 
 .app-statistic__downloads
 	display: flex
-	align-items: baseline
+	align-items: flex-end
 
 .app-statistic__reviews
 	display: flex
-	align-items: baseline
+	align-items: flex-end
 
 .button
 	display: inline-block
@@ -249,6 +259,7 @@ a
 	color: #808080
 	padding: 6px 12px
 	background-color: #f6f6f6
+	border-radius: 10px
 
 .alternative-markets-slider__item
 	display: flex
@@ -309,8 +320,17 @@ a
 	width: 100%
 
 .not-filled
+	color: #fa2f5b
 	&.support-form__input
 		border-bottom: 1px solid #fa2f5b
+		&::-webkit-input-placeholder
+			color: #fa2f5b
+		&::-moz-placeholder
+			color: #fa2f5b
+		&:-moz-placeholder
+			color: #fa2f5b
+		&:-ms-input-placeholder
+			color: #fa2f5b
 	&.support-form__selectbox
 		&::after
 			border-color: #fa2f5b
@@ -320,6 +340,8 @@ a
 	padding: 0 5px 5px
 	border-bottom: 1px solid #e6e6eb
 	font-size: 16px
+	&:focus
+		border-color: #00c89b
 	&::-webkit-input-placeholder
 		color: #b4b4be
 	&::-moz-placeholder
