@@ -200,7 +200,7 @@
     </div>
 </div>
 
-<div class="popup-wrapper js-popup" data-popup="technical-support">
+<div class="popup-wrapper opened js-popup" data-popup="technical-support">
     <div class="popup">
         <section class="header mb25">
             <div class="container container_pink">
@@ -215,14 +215,17 @@
         <section class="technical-support">
             <div class="container">
                 <p class="fz16 fw700 mb35">Обращение в службу поддержки</p>
-                <form class="support-form" action="">
-                    <select class="support-form__select mb30" data-placeholder="Укажите тему">
-                        <option></option>
-                        <option value="Установка приложения">Установка приложения</option>
-                        <option value="Ошибка в работе приложения">Ошибка в работе приложения</option>
-                    </select>
-                    <input class="support-form__text mb15" type="text" placeholder="Email">
-                    <p class="text-center"><button class="button button_gray js-button-support" type="submit" disabled>Отправить</button></p>
+                <form class="support-form" action="#">
+                    <div class="support-form__selectbox mb30">
+                        <select class="jq-selectbox" data-placeholder="Укажите тему">
+                            <option value=""></option>
+                            <option value="Установка приложения">Установка приложения</option>
+                            <option value="Ошибка в работе приложения">Ошибка в работе приложения</option>
+                        </select>
+                        <div class="support-form__select"></div>
+                    </div>
+                    <input class="support-form__input mb15" type="text" placeholder="Email">
+                    <p class="text-center"><button class="button button_gray button-support" type="submit">Отправить</button></p>
                 </form>
             </div>
         </section>
@@ -244,7 +247,7 @@
         <section class="technical-problem mb15">
             <div class="container container_lightest-yellow text-center pt20 pb15">
                 <i class="fri fri_ggl-play mb15"></i>
-                <p class="text-darkest-green fz13">По техническим причинам приложение для скачивания через Google Play временно недоступно, ниже Вы найдете подробные инструкции как установить Denim на свой смартфон.</p>
+                <p class="text-darkest-green fz13 fw500">По техническим причинам приложение для скачивания через Google Play временно недоступно, ниже Вы найдете подробные инструкции как установить Denim на свой смартфон.</p>
             </div>
         </section>
         <section class="instruction mb15">

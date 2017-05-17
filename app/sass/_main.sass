@@ -178,7 +178,7 @@ a
 	+transition(all 0.3s ease)
 	position: relative
 	&.hidden
-		height: 75px
+		height: 100px
 		overflow: hidden
 		margin-bottom: 10px
 		&::after
@@ -270,64 +270,56 @@ a
 	display: inline-block
 	max-width: 100%
 
-.support-form__select
+.support-form__selectbox
 	position: relative
 	width: 100%
-	cursor: pointer
-	font-size: 16px
-
-	.jq-selectbox
-		position: relative
-		width: 100%
-
-	.jq-selectbox__select
-		position: relative
-		display: flex
-		padding: 0 5px 5px
-		&::after
-			position: absolute
-			content: ''
-			bottom: 0
-			left: 0
-			width: 100%
-			border-bottom: 1px solid #e6e6eb
-
-	.placeholder
-		color: #b4b4be
-
-	.jq-selectbox__dropdown
-		padding-top: 8px
-		border: 1px solid #e6e6eb
-		border-top: none
+	padding: 0 5px 5px
+	&::after
 		position: absolute
-		top: 100%
-		background-color: #FFFFFF
+		content: ''
+		bottom: 0
+		left: 0
 		width: 100%
-		ul
-			list-style: none
-			li
-				margin-bottom: 5px
-				padding: 0 5px
-				&:hover
-					text-decoration: underline
-
-	.jq-selectbox__select-text
-		flex-grow: 1
-
-	.jq-selectbox__trigger
+		border-bottom: 1px solid #e6e6eb
+	&::before
+		position: absolute
+		content: ''
+		top: 50%
+		right: 0
 		width: 0
 		height: 0
 		border-style: solid
 		border-width: 5px 5px 0 5px
 		border-color: #b4b4be transparent transparent transparent
 		align-self: center
+	select
+		cursor: pointer
+		left: 0
+		top: 0
+		height: 100%
+		position: absolute
+		opacity: 0
+		width: 100%
+		z-index: 10
 
-.support-form__text
+.support-form__select
+	position: relative
+	cursor: pointer
+	font-size: 16px
+	width: 100%
+
+.not-filled
+	&.support-form__input
+		border-bottom: 1px solid #fa2f5b
+	&.support-form__selectbox
+		&::after
+			border-color: #fa2f5b
+
+.support-form__input
 	width: 100%
 	padding: 0 5px 5px
 	border-bottom: 1px solid #e6e6eb
 	font-size: 16px
-
 	&::-webkit-input-placeholder
 		color: #b4b4be
 	&::-moz-placeholder
@@ -336,28 +328,14 @@ a
 		color: #b4b4be
 	&:-ms-input-placeholder
 		color: #b4b4be
-
-.not-filled
-	border-bottom: 1px solid #fa2f5b
-	&.support-form__select
-		.placeholder
-			color: #fa2f5b
-	&::-webkit-input-placeholder
-		color: #fa2f5b
-	&::-moz-placeholder
-		color: #fa2f5b
-	&:-moz-placeholder
-		color: #fa2f5b
-	&:-ms-input-placeholder
-		color: #fa2f5b
-
 
 input
 	border: none
 	outline: none
 
 select
-	display: none
+	color: #000
+	border: none
 	&:focus
 		outline: none
 
@@ -379,6 +357,9 @@ select
 		visibility: visible
 		opacity: 1
 		transform: translateX(0)
+
+.opacity09
+	opacity: 0.9
 
 .popup
 	background-color: #FFFFFF

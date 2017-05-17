@@ -282,6 +282,76 @@ var YOURAPPNAME = (function () {
                 );
             }
         }
+    };
+
+    YOURAPPNAME.prototype.selectBox = function (selector) {
+        var selectBox = {
+            init: function () {
+                selectBox.bindings();
+                $(".jq-selectbox").each(function () {
+                    selectBox.update($(this));
+                });
+            },
+            bindings: function () {
+                $(selector).on('change', function (e) {
+                    e.preventDefault();
+                    selectBox.update($(this));
+                })
+            },
+            update: function (bl) {
+                var $this = bl,
+                    selectedOption = $this.find("option:selected"),
+                    selectText = selectedOption.text(),
+                    fakeSelect = $this.next(".support-form__select");
+
+                if (selectText === "") {
+                    selectText = $this.attr('data-placeholder');
+                    fakeSelect.css('color', '#b4b4be');
+                } else {
+                    fakeSelect.css('color', '#000');
+                }
+                fakeSelect.html(selectText);
+            }
+        };
+        if (selector) {
+            selectBox.init();
+        };
+        return selectBox;
+    };
+
+    YOURAPPNAME.prototype.formSupport = function (selector) {
+        var formSupport = {
+            init: function () {
+                formSupport.bindings();
+                $(selector).each(function () {
+                    formSupport.update($(this));
+                });
+            },
+            bindings: function () {
+                $(selector).each(function () {
+
+                    $(this).submit(function (e) {
+                        e.preventDefault();
+                        console.log("hi");
+                        formSupport.update($(this));
+                    })
+                });
+
+            },
+            update: function (bl) {
+                var $this = bl,
+                    selectBox = $this.children(".support-form__selectbox"),
+                    input = $this.children(".support-form__input"),
+                    button = $this.find(".button-support");
+
+
+            }
+        };
+        if (selector) {
+            formSupport.init();
+        }
+
+        return formSupport;
     }
 
     return YOURAPPNAME;
@@ -292,11 +362,6 @@ var app = new YOURAPPNAME(document);
 
 app.appLoad('loading', function () {
     // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
-    (function ($) {
-        $(function () {
-            $('input, select').styler();
-        });
-    })(jQuery);
 });
 
 app.appLoad('dom', function () {
@@ -310,6 +375,10 @@ app.appLoad('full', function (e) {
     // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
     // Please do not use jQuery ready state function to avoid mass calling document event trigger!
     app.popups();
+
+    app.selectBox(".jq-selectbox");
+
+    app.formSupport(".support-form");
 
     (function () {
         $('.screenshots-slider').owlCarousel({
@@ -360,7 +429,7 @@ app.appLoad('full', function (e) {
         }
     });
 
-/*    $(".support-form__select").on('change', function (e) {
+    /*$(".support-form__selectbox").on('change', function (e) {
         var $this = $(this);
         console.log($this.val())
         if ($this.val() === "") {
@@ -381,7 +450,7 @@ app.appLoad('full', function (e) {
 
     $('.js-button-support').on('click', function (e) {
         var $this = $(this),
-            select = $('.support-form__select'),
+            select = $('.support-form__selectbox'),
             input = $('.support-form__text');
         console.log(input.val());
         if (input.val() === "") {
