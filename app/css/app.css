@@ -72,6 +72,10 @@
   font-size: 12px;
 }
 
+.fz13 {
+  font-size: 13px;
+}
+
 .fz16 {
   font-size: 16px;
 }
@@ -447,6 +451,7 @@ a {
   max-width: 300px;
   width: 100%;
   font-size: 13px;
+  font-weight: 500;
   color: #FFFFFF;
   text-align: center;
   padding: 9px 55px 7px;
