@@ -414,16 +414,18 @@ a {
 
 .header__logo {
   margin: 0 auto;
+  display: inline-block;
 }
 
 .logo-title {
+  display: inline-block;
   position: relative;
 }
 .logo-title::after {
   position: absolute;
   content: "";
-  top: 18%;
-  left: 22%;
+  top: 5px;
+  left: 20px;
   width: 5px;
   height: 5px;
   background-color: #00dba3;
@@ -431,7 +433,7 @@ a {
 }
 .logo-title::before {
   position: absolute;
-  top: 0;
+  top: -7px;
   right: -20px;
   content: "18+";
   border: 1px solid #FFFFFF;
