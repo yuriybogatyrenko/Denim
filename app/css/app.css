@@ -679,9 +679,10 @@ a {
   position: absolute;
   content: "";
   top: 50%;
-  right: 0;
+  right: 5px;
   width: 0;
   height: 0;
+  margin-top: -3px;
   border-style: solid;
   border-width: 5px 5px 0 5px;
   border-color: #b4b4be transparent transparent transparent;
@@ -716,28 +717,28 @@ a {
   color: #fa2f5b;
 }
 
-.not-filled {
+.not-filled, .has-error {
   color: #fa2f5b;
 }
-.not-filled.support-form__input {
+.not-filled.support-form__input, .has-error.support-form__input {
   border-bottom: 1px solid #fa2f5b;
 }
-.not-filled.support-form__input:focus {
+.not-filled.support-form__input:focus, .has-error.support-form__input:focus {
   border-bottom: 1px solid #fa2f5b;
 }
-.not-filled.support-form__input::-webkit-input-placeholder {
+.not-filled.support-form__input::-webkit-input-placeholder, .has-error.support-form__input::-webkit-input-placeholder {
   color: #fa2f5b;
 }
-.not-filled.support-form__input::-moz-placeholder {
+.not-filled.support-form__input::-moz-placeholder, .has-error.support-form__input::-moz-placeholder {
   color: #fa2f5b;
 }
-.not-filled.support-form__input:-moz-placeholder {
+.not-filled.support-form__input:-moz-placeholder, .has-error.support-form__input:-moz-placeholder {
   color: #fa2f5b;
 }
-.not-filled.support-form__input:-ms-input-placeholder {
+.not-filled.support-form__input:-ms-input-placeholder, .has-error.support-form__input:-ms-input-placeholder {
   color: #fa2f5b;
 }
-.not-filled.support-form__selectbox::after {
+.not-filled.support-form__selectbox::after, .has-error.support-form__selectbox::after {
   border-color: #fa2f5b;
 }
 

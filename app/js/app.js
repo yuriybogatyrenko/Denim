@@ -271,65 +271,93 @@ var YOURAPPNAME = (function () {
     };
 
     /*YOURAPPNAME.prototype.checkSelect = function (select) {
-        if (select.hasClass('js-select-education')) {
-            var str = select.find('option:selected').text();
-            if (str !== '') {
-                select.closest('.filter__section').find('.filter__inputs').append(
-                    '<span class="filter-input__item">' + str +
-                    '<input type="checkbox" checked="checked" class="hidden" name="education[' + str + ']" id="education" value="1" />' +
-                    '<i class="fri_filter-remove-input"></i>' +
-                    '</span>'
-                );
-            }
-        }
-    };*/
+     if (select.hasClass('js-select-education')) {
+     var str = select.find('option:selected').text();
+     if (str !== '') {
+     select.closest('.filter__section').find('.filter__inputs').append(
+     '<span class="filter-input__item">' + str +
+     '<input type="checkbox" checked="checked" class="hidden" name="education[' + str + ']" id="education" value="1" />' +
+     '<i class="fri_filter-remove-input"></i>' +
+     '</span>'
+     );
+     }
+     }
+     };*/
 
-    YOURAPPNAME.prototype.formSupportUpdate = function (selector) {
-        var selectBoxWrapper = $(this).find("support-form__selectbox"),
-            selectedOption = selectBoxWrapper.find("option:selected"),
-            selectedText = selectedOption.text(),
-            fakeSelect = selectBoxWrapper.find(".support-form__select");
-
+    YOURAPPNAME.prototype.selectBox = function (selector) {
+        var _self = this;
 
         var selectBox = {
             init: function () {
                 selectBox.bindings();
+
+                $(selector).each(function () {
+                    selectBox.update($(this));
+                });
             },
             bindings: function () {
                 $(selector).on('change', function (e) {
                     e.preventDefault();
-                    app.formSupportValidate().validateSelect(selectBoxWrapper);
-                    console.log(selectedText);
-                })
+                    selectBox.update($(this));
+                    _self.formValidator().checkSelect($(this), $(this).closest('form'));
+                });
             },
-            /*update: function (bl) {
+            update: function (bl) {
                 var $this = bl,
-                    selectedOption = $this.find("option:selected"),
-                    selectText = selectedOption.text(),
-                    fakeSelect = $this.next(".support-form__select"),
-                    selectBoxWrapper = $this.closest(".support-form__selectbox");
+                    selectedOpt = $this.find('option:selected'),
+                    selectText = selectedOpt.text(),
+                    selectWrapper = $this.closest('.js-selectbox-wrapper'),
+                    fakeSelect = selectWrapper.find('.js-selectbox-text');
 
-                if (selectText === "") {
-                    selectText = $this.attr('data-placeholder');
-                    fakeSelect.addClass("support-form__select_placeholder");
-
+                if (selectText === '') {
+                    selectText = $this.data('placeholder');
+                    fakeSelect.addClass('support-form__select_placeholder');
                 } else {
-                    fakeSelect.removeClass("support-form__select_placeholder");
-                    fakeSelect.addClass("support-form__select_not-filled");
-                    if (selectBoxWrapper.hasClass("not-filled")) {
-                        selectBoxWrapper.removeClass("not-filled");
-                    }
+                    fakeSelect.removeClass('support-form__select_placeholder');
                 }
 
-                fakeSelect.html(selectText);
-            }*/
+                fakeSelect.text(selectText);
+            }
         };
-        if (selector) {
+
+        if (selector)
             selectBox.init();
-        };
+
         return selectBox;
     };
 
+    YOURAPPNAME.prototype.formValidator = function () {
+        var validator = {
+            checkSelect: function (select, form) {
+                if(select.val() === '') {
+                    select.next('.js-selectbox-text').addClass('has-error');
+                    validator.buttonChange(true, form);
+                } else {
+                    select.next('.js-selectbox-text').removeClass('has-error');
+                    validator.buttonChange(false, form);
+                }
+            },
+            checkInput: function (input, form) {
+                if(input.val().length < 3) {
+                    input.addClass('has-error');
+                    validator.buttonChange(true, form);
+                } else {
+                    input.removeClass('has-error');
+                    validator.buttonChange(false, form);
+                }
+            },
+            buttonChange: function (type, form) {
+                var button = form.find('button[type="submit"]');
+
+                if(type)
+                    button.attr('disabled', true);
+                else
+                    button.removeAttr('disabled');
+            }
+        };
+
+        return validator;
+    };
 
     YOURAPPNAME.prototype.formSupportValidate = function () {
         var formSupport = {
@@ -351,34 +379,35 @@ var YOURAPPNAME = (function () {
 
                 console.log(selectedText);
 
-                /*var $this = bl,
+                var $this = bl,
                     selectBoxWrapper = $this.find(".support-form__selectbox"),
                     selectBox = $this.find(".jq-selectbox"),
                     input = $this.children(".support-form__input"),
                     fakeSelect = $this.find(".support-form__select"),
                     button = $this.find(".button-support");
 
-                if (selectBox.val() === ''){
+                if (selectBox.val() === '') {
                     selectBoxWrapper.addClass("not-filled");
                     // fakeSelect.css('color', '#fa2f5b');
                 } else {
                     selectBoxWrapper.removeClass("not-filled");
-                };
+                }
 
-                if (input.val() === ''){
+
+                if (input.val() === '') {
                     input.addClass("not-filled");
                 } else {
                     input.removeClass("not-filled");
                 }
 
-                if ((selectBox.val() === '') && (input.val() === '')){
+                if ((selectBox.val() === '') && (input.val() === '')) {
                     button.attr("disabled");
                     button.addClass("button_gray");
                 } else {
                     button.removeAttr("disabled");
                     button.removeClass("button_gray");
                     button.addClass("button_persian-green");
-                }*/
+                }
             }
         };
         formSupport.init();
@@ -408,9 +437,22 @@ app.appLoad('full', function (e) {
     // Please do not use jQuery ready state function to avoid mass calling document event trigger!
     app.popups();
 
-    app.formSupportUpdate(".support-form");
+    app.selectBox('.js-selectbox');
+    // app.formSupportUpdate(".support-form");
 
     // app.formSupport(".support-form");
+
+    $('input[name="email"]').focusout(function (e) {
+        e.preventDefault();
+        app.formValidator().checkInput($(this), $(this).closest('form'));
+    });
+
+    $('form').on('submit', function (e) {
+        e.preventDefault();
+
+        app.formValidator().checkInput($(this).find('input'), $(this));
+        app.formValidator().checkSelect($(this).find('select'), $(this));
+    });
 
     (function () {
         $('.screenshots-slider').owlCarousel({

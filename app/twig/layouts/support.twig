@@ -216,15 +216,15 @@
             <div class="container">
                 <p class="fz16 fw700 mb35">Обращение в службу поддержки</p>
                 <form class="support-form" action="#" method="get">
-                    <div class="support-form__selectbox mb30">
-                        <select class="jq-selectbox" data-placeholder="Укажите тему">
+                    <div class="support-form__selectbox mb30 js-selectbox-wrapper">
+                        <select class="js-selectbox" data-placeholder="Укажите тему">
                             <option value=""></option>
-                            <option value="Установка приложения">Установка приложения</option>
-                            <option value="Ошибка в работе приложения">Ошибка в работе приложения</option>
+                            <option value="1">Установка приложения</option>
+                            <option value="2">Ошибка в работе приложения</option>
                         </select>
-                        <div class="support-form__select"></div>
+                        <div class="support-form__select js-selectbox-text"></div>
                     </div>
-                    <input class="support-form__input mb15" type="text" placeholder="Email">
+                    <input class="support-form__input mb15" name="email" type="email" placeholder="Email">
                     <p class="text-center">
                         <button class="button button_gray button-support">Отправить</button>
                     </p>
