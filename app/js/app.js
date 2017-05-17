@@ -243,10 +243,10 @@ var YOURAPPNAME = (function () {
             });
 
             plugin.reachPopups.on('click', function (e) {
-                e.preventDefault();
                 var target = $(e.target);
                 var className = options.reachElementClass.replace('.', '');
                 if (target.hasClass(className)) {
+                    e.preventDefault();
                     plugin.closePopup($(e.target).attr('data-popup'));
                 }
             });
@@ -270,7 +270,7 @@ var YOURAPPNAME = (function () {
         return plugin;
     };
 
-    YOURAPPNAME.prototype.checkSelect = function (select) {
+    /*YOURAPPNAME.prototype.checkSelect = function (select) {
         if (select.hasClass('js-select-education')) {
             var str = select.find('option:selected').text();
             if (str !== '') {
@@ -282,7 +282,7 @@ var YOURAPPNAME = (function () {
                 );
             }
         }
-    };
+    };*/
 
     YOURAPPNAME.prototype.selectBox = function (selector) {
         var selectBox = {
@@ -352,7 +352,7 @@ var YOURAPPNAME = (function () {
         }
 
         return formSupport;
-    }
+    };
 
     return YOURAPPNAME;
 
@@ -378,7 +378,7 @@ app.appLoad('full', function (e) {
 
     app.selectBox(".jq-selectbox");
 
-    app.formSupport(".support-form");
+    // app.formSupport(".support-form");
 
     (function () {
         $('.screenshots-slider').owlCarousel({
