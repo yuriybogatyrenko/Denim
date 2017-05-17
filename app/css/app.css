@@ -24,6 +24,10 @@
   margin-bottom: 20px;
 }
 
+.mb22 {
+  margin-bottom: 22px;
+}
+
 .mb25 {
   margin-bottom: 25px;
 }
@@ -348,6 +352,7 @@ a {
   font-family: "arrow-left";
   position: absolute;
   top: 50%;
+  transform: translateY(50%);
   left: 0;
   content: "";
   color: #FFFFFF;
@@ -355,6 +360,7 @@ a {
   font-weight: normal;
   display: inline-block;
   font-size: 26px;
+  line-height: 1;
 }
 
 .container {
@@ -403,7 +409,7 @@ a {
 }
 
 .header-flex_popup {
-  padding: 25px 0;
+  padding: 15px 0;
 }
 
 .header__logo {

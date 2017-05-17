@@ -349,70 +349,20 @@ var YOURAPPNAME = (function () {
             buttonChange: function (type, form) {
                 var button = form.find('button[type="submit"]');
 
-                if(type)
+                if(type){
                     button.attr('disabled', true);
-                else
-                    button.removeAttr('disabled');
-            }
-        };
-
-        return validator;
-    };
-
-    YOURAPPNAME.prototype.formSupportValidate = function () {
-        var formSupport = {
-            init: function () {
-                formSupport.bindings();
-            },
-            bindings: function () {
-                $(this).on("submit", function (e) {
-                    e.preventDefault();
-                    formSupport.validateSelect($(this));
-                })
-            },
-
-            validateSelect: function (bl) {
-                var selectBoxWrapper = bl,
-                    selectedOption = selectBoxWrapper.find("option:selected"),
-                    selectedText = selectedOption.text(),
-                    fakeSelect = selectBoxWrapper.find(".support-form__select");
-
-                console.log(selectedText);
-
-                var $this = bl,
-                    selectBoxWrapper = $this.find(".support-form__selectbox"),
-                    selectBox = $this.find(".jq-selectbox"),
-                    input = $this.children(".support-form__input"),
-                    fakeSelect = $this.find(".support-form__select"),
-                    button = $this.find(".button-support");
-
-                if (selectBox.val() === '') {
-                    selectBoxWrapper.addClass("not-filled");
-                    // fakeSelect.css('color', '#fa2f5b');
-                } else {
-                    selectBoxWrapper.removeClass("not-filled");
-                }
-
-
-                if (input.val() === '') {
-                    input.addClass("not-filled");
-                } else {
-                    input.removeClass("not-filled");
-                }
-
-                if ((selectBox.val() === '') && (input.val() === '')) {
-                    button.attr("disabled");
                     button.addClass("button_gray");
-                } else {
-                    button.removeAttr("disabled");
+                    button.removeClass("button_persian-green");
+                }
+                else {
+                    button.removeAttr('disabled');
                     button.removeClass("button_gray");
                     button.addClass("button_persian-green");
                 }
             }
         };
-        formSupport.init();
 
-        return formSupport;
+        return validator;
     };
 
     return YOURAPPNAME;
