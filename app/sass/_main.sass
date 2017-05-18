@@ -108,10 +108,29 @@ a
 .app-logo_instruction
 	width: 20%
 
+.technical-problem__flex
+	display: flex
+	justify-content: center
+
 .technical-problem__svg
 	width: 10%
+	position: relative
 	&:first-child
 		margin-right: 5%
+		&::before
+			position: absolute
+			content: ''
+			top: 0
+			right: -25%
+			height: 100%
+			border-right: 1px solid #d5d5d5
+
+
+.technical-problem__svg_gear
+	width: 100%
+
+.technical-problem__svg_ggl
+	width: 100%
 
 .app-title
 	display: flex
