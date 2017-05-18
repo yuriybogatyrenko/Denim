@@ -18,8 +18,13 @@
                 приложения на Вашем рабочем столе.</p>
             <img class="app-logo_instruction" src="/images/logo.svg" alt="">
         </div>
-        <p class="instruction__app-install text-center mb15"><span class="button button_persian-green js-open-popup"
+        {% if state2 == "false" %}
+            <p class="instruction__app-install text-center mb15"><span class="button button_persian-green js-open-popup"
                                                                    data-open-popup="instruction">Установить</span></p>
+        {% endif %}
+        {% if state2 == "true" %}
+            <p class="fz16 fw700 mb8">Подробная инструкция с картинками</p>
+        {% endif %}
         <div class="read-more {% if hidden != 'false' %}hidden hidden_instruction {% endif %} mb15">
             <div class="read-more__wrapper">
                 <p class="fz14 mb8">Вам необходимо перейти в настройки устройства, это можно сделать опустив панель
