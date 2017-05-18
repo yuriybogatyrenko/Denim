@@ -31,11 +31,14 @@
                 <img class="detail-instruction__image mb15" src="../../images/detail-instruction-6.jpg" alt="">
                 <p class="fz14 mb8">Либо найдите файл в шторке уведомлений.</p>
                 <div class="down-line mb15"><img class="detail-instruction__image" src="../../images/detail-instruction-7.jpg" alt=""></div>
-                <p class="fz12 text-gray mb20">Обращаем Ваше внимание, на разных моделях устройств и версиях операционных систем, могут быть незначительные графические различия.</p>
-                <p class="fz12 text-gray mb15">Если у Вас возникли сложности при установке, то Вы также можете установить приложение через другие магазины приложений, например Yandex Store или обратиться в службу поддержки:</p>
+                {% if state3 == "false" %}
+                    <p class="fz12 text-gray mb20">Обращаем Ваше внимание, на разных моделях устройств и версиях операционных систем, могут быть незначительные графические различия.</p>
+                    <p class="fz12 text-gray mb15">Если у Вас возникли сложности при установке, то Вы также можете установить приложение через другие магазины приложений, например Yandex Store или обратиться в службу поддержки:</p>
+                {% endif %}
             </div>
         </div>
         <p class="js-read-more-button down-line title title_readmore text-center"><span class="pointer">Подробная инструкция с картинками</span></p>
+
         <p class="fz12 top-line text-gray mb20">Обращаем Ваше внимание, на разных моделях устройств и версиях операционных систем, могут быть незначительные графические различия.</p>
         <p class="fz12 text-gray mb30">Если у Вас возникли сложности при установке, то Вы также можете установить приложение через другие магазины приложений, например Yandex Store или обратиться в службу поддержки:</p>
         <p class="title down-line text-center mb15"><span class="default-link js-open-popup pointer" data-open-popup="technical-support">Обратиться в поддержку</span></p>
