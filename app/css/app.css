@@ -687,6 +687,11 @@ a {
   border-bottom: 1px solid #d8d8d8;
 }
 
+.has-border {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
 .top-line {
   position: relative;
   padding-top: 15px;
