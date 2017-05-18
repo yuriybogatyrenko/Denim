@@ -467,6 +467,7 @@ a {
 .header_bg {
   background: url("../images/header-bg.jpg") repeat-x top, linear-gradient(to bottom, #ff1063, #ea044f);
   background-size: contain;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .container_lightest-yellow {
