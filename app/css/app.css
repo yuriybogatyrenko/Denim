@@ -580,7 +580,7 @@ a {
   top: 0;
   right: -50%;
   height: 100%;
-  border-right: 1px solid #d5d5d5;
+  border-right: 1px solid rgba(216, 216, 216, 0.34);
 }
 
 .technical-problem__svg_gear {
@@ -678,8 +678,9 @@ a {
   position: relative;
   padding-bottom: 15px;
 }
-.down-line::after {
+.down-line:after {
   position: absolute;
+  display: block;
   content: "";
   bottom: 0;
   left: 0;
