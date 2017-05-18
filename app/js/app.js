@@ -401,34 +401,12 @@ app.appLoad('full', function (e) {
 
     (function () {
         $('.screenshots-slider').owlCarousel({
-            center: true,
-            items: 2,
-            startPosition: 1
+            autoWidth: true
         });
 
         $('.alternative-markets-slider').owlCarousel({
-            items: 3,
-            center: false,
-            loop: true,
-            startPosition: 1,
-            responsive: {
-                0: {
-                    items: 3,
-                    center: true
-                },
-                /*450: {
-                    items: 4
-                },
-                550: {
-                    items: 5
-                },
-                650: {
-                    items: 6
-                },
-                768: {
-                    items: 7
-                },*/
-            }
+            autoWidth: true,
+            margin: 10
         });
 
     })();
