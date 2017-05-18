@@ -23,3 +23,40 @@
 .fri_star-gray
 	+sprite(star-gray)
 
+[class^="icon-"]:before, [class*=" icon-"]:before
+	font-family: "fontello"
+	font-style: normal
+	font-weight: normal
+
+.icon-left
+	&::before
+		content: '\e800'
+		color: #FFFFFF
+		font-size: 115%
+
+.icon-download
+	&::before
+		content: '\e801'
+		color: #fa2f5b
+
+.icon-chat
+	&::before
+		content: '\e802'
+		color: #60b800
+
+.icon-star
+	line-height: 1
+	&::before
+		font-size: 70%
+		content: '\e803'
+	&.icon-star_gray
+		&::before
+			color: #d8d8d8
+	&.icon-star_filled
+		&::before
+			color: #00c89b
+
+
+.icon-dot
+	&::before
+		content: '\e804'

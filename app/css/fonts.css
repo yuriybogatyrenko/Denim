@@ -181,13 +181,13 @@
 }
 
 @font-face {
-    font-family: 'arrow-left';
-    src: url('../fonts/icons/arrow-left.eot?84479920');
-    src: url('../fonts/icons/arrow-left.eot?84479920#iefix') format('embedded-opentype'),
-    url('../fonts/icons/arrow-left.woff2?84479920') format('woff2'),
-    url('../fonts/icons/arrow-left.woff?84479920') format('woff'),
-    url('../fonts/icons/arrow-left.ttf?84479920') format('truetype'),
-    url('../fonts/icons/arrow-left.svg?84479920#arrow-left') format('svg');
+    font-family: 'fontello';
+    src: url('../fonts/icons/fontello.eot?84479920');
+    src: url('../fonts/icons/fontello.eot?84479920#iefix') format('embedded-opentype'),
+    url('../fonts/icons/fontello.woff2?84479920') format('woff2'),
+    url('../fonts/icons/fontello.woff?84479920') format('woff'),
+    url('../fonts/icons/fontello.ttf?84479920') format('truetype'),
+    url('../fonts/icons/fontello.svg?84479920#arrow-left') format('svg');
     font-weight: normal;
     font-style: normal;
 }
