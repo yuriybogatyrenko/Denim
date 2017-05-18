@@ -196,7 +196,7 @@ var YOURAPPNAME = (function () {
         plugin.closePopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').removeClass('opened');
             // setTimeout(function () {
-            plugin.bodyEl.removeAttr('style');
+            plugin.bodyEl.css('overflow-y', 'auto');
             plugin.htmlEl.removeClass('popup-opened');
             plugin.topPanelEl.removeAttr('style');
             // }, 500);
@@ -409,13 +409,14 @@ app.appLoad('full', function (e) {
         $('.alternative-markets-slider').owlCarousel({
             items: 3,
             center: false,
+            loop: true,
             startPosition: 1,
             responsive: {
                 0: {
                     items: 3,
                     center: true
                 },
-                450: {
+                /*450: {
                     items: 4
                 },
                 550: {
@@ -426,7 +427,7 @@ app.appLoad('full', function (e) {
                 },
                 768: {
                     items: 7
-                },
+                },*/
             }
         });
 
@@ -447,4 +448,20 @@ app.appLoad('full', function (e) {
             }, 300)
         }
     });
+});
+
+$(document).ready(function() {
+
+    var fontSize = $(window).width()/(22.85*1.2);
+    if(fontSize < 14)
+        fontSize = 14;
+    $('body').css('font-size', fontSize);
+
+    $(window).resize(function() {
+        var fontSize = $(window).width()/(22.85*1.2);
+        if(fontSize < 14)
+            fontSize = 14;
+        $('body').css('font-size', fontSize);
+    });
+
 });

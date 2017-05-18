@@ -35,14 +35,13 @@ a
 	background: linear-gradient(to bottom, #ff1063, #ea044f)
 
 .header__back
-	position: relative
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	left: 0
 	&:after
 		cursor: pointer
 		font-family: 'arrow-left'
-		position: absolute
-		top: 50%
-		transform: translateY(50%)
-		left: 0
 		content: '\e801'
 		color: #FFFFFF
 		font-style: normal
@@ -85,11 +84,12 @@ a
 	padding: 50px 0 40px
 
 .header-flex_popup
-	padding: 15px 0
+	padding: 20px 0 10px
 
 .header__logo
-	margin: 0 auto
-	display: inline-block
+	//margin: 0 auto
+	//display: inline-block
+	text-align: center
 
 .logo-title
 	display: inline-block
@@ -137,13 +137,15 @@ a
 
 .button
 	display: inline-block
-	max-width: 300px
+	box-sizing: border-box
+	//max-width: 300px
 	width: 100%
-	font-size: 13px
+	//font-size: 13px
+	font-size: 90%
 	font-weight: 500
 	color: #FFFFFF
 	text-align: center
-	padding: 9px 55px 7px
+	padding: 9px 15px 7px
 	text-transform: uppercase
 	cursor: pointer
 	border-radius: 3px
@@ -168,7 +170,7 @@ a
 
 .title
 	position: relative
-	font-size: 14px
+	//font-size: 14px
 	color: #00c89b
 	font-weight: 500
 	text-transform: uppercase
@@ -247,7 +249,7 @@ a
 	height: 28px
 
 .review-header__author
-	font-size: 12px
+	font-size: 86%
 	font-weight: 500
 
 .review-header__rating
@@ -259,11 +261,14 @@ a
 
 .reviews__body
 	font-style: italic
-	font-size: 12px
+	font-size: 86%
 	color: #808080
 	padding: 6px 12px
 	background-color: #f6f6f6
 	border-radius: 10px
+
+.alternative-markets
+	padding-bottom: 30px
 
 .alternative-markets-slider__item
 	display: flex
