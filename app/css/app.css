@@ -496,7 +496,7 @@ a {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 50px 0 40px;
+  padding: 40px 0 30px;
 }
 
 .header-flex_popup {
