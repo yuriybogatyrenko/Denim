@@ -443,7 +443,7 @@ app.appLoad('full', function (e) {
         if (readmore.hasClass("hidden")) {
             readmore.css('height', readmoreHeight);
             setTimeout(function () {
-                readmore.removeClass("hidden");
+                readmore.removeClass("hidden").css('height','auto');
                 $this.addClass("display-none");
             }, 300)
         }
