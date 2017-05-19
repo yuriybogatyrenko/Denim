@@ -1012,24 +1012,20 @@ select:focus {
 
 .popup-wrapper {
   top: 0;
-  left: 0;
-  transform: translateX(100%);
+  left: 100%;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: 100;
-  background-color: #FFFFFF;
-  visibility: hidden;
-  opacity: 0;
+  background-color: #fff;
   transition: all 0.3s ease;
   overflow-y: auto;
 }
 .popup-wrapper.opened {
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(0);
+  left: 0;
+  box-shadow: 0 0 500px #fff;
 }
 
 .opacity09 {
@@ -1040,7 +1036,7 @@ select:focus {
   background-color: #FFFFFF;
   position: relative;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .popup_subject {
