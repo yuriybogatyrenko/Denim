@@ -737,6 +737,11 @@ a {
 .read-more.hidden::after p {
   color: transparent;
 }
+.read-more.hidden .has-hidden-add {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 .pointer {
   cursor: pointer;
@@ -833,8 +838,11 @@ a {
 .alternative-markets {
   padding-bottom: 30px;
 }
+.alternative-markets .container {
+  padding-right: 0;
+}
 .alternative-markets .owl-item {
-  width: 20vw !important;
+  width: 27vw !important;
   box-sizing: border-box;
 }
 

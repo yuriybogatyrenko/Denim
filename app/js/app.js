@@ -444,11 +444,13 @@ app.appLoad('full', function (e) {
 
     (function () {
         $('.screenshots-slider').owlCarousel({
-            autoWidth: true
+            autoWidth: true,
+            loop: true
         });
 
         $('.alternative-markets-slider').owlCarousel({
-            autoWidth: true
+            autoWidth: true,
+            loop: true
         });
 
     })();
