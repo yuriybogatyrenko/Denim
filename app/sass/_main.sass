@@ -463,9 +463,10 @@ select
 
 .popup-wrapper
 	top: 0
-	left: 100%
+	left: -100%
 	//transform: translateX(100%)
 	display: flex
+	//align-items: flex-start
 	height: 100%
 	width: 100%
 	position: fixed
@@ -489,7 +490,7 @@ select
 	background-color: #FFFFFF
 	position: relative
 	width: 100%
-	margin: auto
+	margin: 0
 
 .popup_subject
 	max-width: 320px
@@ -566,7 +567,7 @@ footer
 .modal-subject
 	max-width: 95%
 	background-color: #FFFFFF
-	padding: 25px 25px 15px
+	padding: 25px 15px 15px
 	transition: (all 0.3s ease)
 	transform: scale(0)
 	z-index: 1000

@@ -1016,7 +1016,7 @@ select:focus {
 
 .popup-wrapper {
   top: 0;
-  left: 100%;
+  left: -100%;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
@@ -1040,7 +1040,7 @@ select:focus {
   background-color: #FFFFFF;
   position: relative;
   width: 100%;
-  margin: auto;
+  margin: 0;
 }
 
 .popup_subject {
@@ -1130,7 +1130,7 @@ footer {
 .modal-subject {
   max-width: 95%;
   background-color: #FFFFFF;
-  padding: 25px;
+  padding: 25px 15px 15px;
   transition: all 0.3s ease;
   transform: scale(0);
   z-index: 1000;

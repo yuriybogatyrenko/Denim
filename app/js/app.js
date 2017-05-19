@@ -359,7 +359,7 @@ var YOURAPPNAME = (function () {
                 }
             },
             checkInput: function (input, form) {
-                console.log(input);
+                // console.log(input);
                 if(input.val().length < 3) {
                     input.addClass('has-error');
                     validator.buttonChange(true, form);
