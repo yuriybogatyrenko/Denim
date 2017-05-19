@@ -835,6 +835,7 @@ a {
 }
 .alternative-markets .owl-item {
   width: 20vw !important;
+  box-sizing: border-box;
 }
 
 .alternative-markets-slider__item {
@@ -847,6 +848,7 @@ a {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
+  padding-right: 5vw !important;
 }
 
 .alternative-markets-slider__image-wrapper-wrapper {
