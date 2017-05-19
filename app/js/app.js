@@ -480,7 +480,6 @@ app.appLoad('full', function (e) {
 
     $('.subject-wrapper').mousedown(function(e) {
         var clicked = $(e.target);
-        console.log(clicked);
         if (clicked.is('.modal-subject') || clicked.parents().is('.modal-subject')) {
             return;
         } else {
