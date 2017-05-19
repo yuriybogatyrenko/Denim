@@ -1138,12 +1138,12 @@ footer {
   padding: 10px 5px;
   font-size: 16px;
   resize: vertical;
-  border: 1px solid #e6e6eb;
+  border-bottom: 1px solid #e6e6eb;
   color: #000;
   outline: none;
 }
 .support-form__textarea:focus {
-  border: 1px solid #00c89b;
+  border-bottom: 1px solid #00c89b;
 }
 .support-form__textarea::-webkit-input-placeholder {
   color: #b4b4be;
