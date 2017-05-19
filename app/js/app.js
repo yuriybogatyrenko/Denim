@@ -478,6 +478,16 @@ app.appLoad('full', function (e) {
         $(this).closest(".js-subject").removeClass("opened");
     })
 
+    $('.subject-wrapper').mousedown(function(e) {
+        var clicked = $(e.target);
+        console.log(clicked);
+        if (clicked.is('.modal-subject') || clicked.parents().is('.modal-subject')) {
+            return;
+        } else {
+            $('.subject-wrapper').removeClass("opened");
+        }
+    });
+
 });
 
 $(document).ready(function() {
