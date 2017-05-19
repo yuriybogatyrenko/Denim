@@ -564,15 +564,15 @@ footer
 
 
 .modal-subject
-	max-width: 320px
+	max-width: 95%
 	background-color: #FFFFFF
-	padding: 20px 30px
+	padding: 25px 25px 15px
 	transition: (all 0.3s ease)
 	transform: scale(0)
 	z-index: 1000
 
 .radiobox__radio
-	margin-bottom: 3.5%
+	margin-bottom: 5.5%
 	&:last-child
 		margin-bottom: 10%
 
@@ -581,8 +581,7 @@ footer
 	justify-content: flex-end
 	
 .radiobox__button
-	&:focus
-		color: #00c89b
+	color: #00c89b
 
 .support-form__textarea
 	width: 100%
@@ -603,3 +602,46 @@ footer
 		color: #b4b4be
 	&:-ms-input-placeholder
 		color: #b4b4be
+		
+input[type=radio]
+	display: none
+
+input[type=radio]:not(old):checked + label
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		width: 16px
+		height: 16px
+		border: 2px solid #00dba3
+		border-radius: 50%
+	&::before
+		content: ''
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 5px
+		width: 10px
+		height: 10px
+		background-color: #00dba3
+		border-radius: 50%
+
+.radiobox__radio-label
+	position: relative
+	padding-left: 40px
+	margin-left: -40px
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		width: 16px
+		height: 16px
+		border: 2px solid #00dba3
+		border-radius: 50%
+
+.radiobox
+	margin-left: 40px

@@ -128,6 +128,10 @@
   margin-bottom: 6.5%;
 }
 
+.mb40 {
+  margin-bottom: 7%;
+}
+
 .mt7 {
   margin-right: 2.3%;
 }
@@ -1124,16 +1128,16 @@ footer {
 }
 
 .modal-subject {
-  max-width: 320px;
+  max-width: 95%;
   background-color: #FFFFFF;
-  padding: 20px 30px;
+  padding: 25px;
   transition: all 0.3s ease;
   transform: scale(0);
   z-index: 1000;
 }
 
 .radiobox__radio {
-  margin-bottom: 3.5%;
+  margin-bottom: 5.5%;
 }
 .radiobox__radio:last-child {
   margin-bottom: 10%;
@@ -1146,7 +1150,7 @@ footer {
   justify-content: flex-end;
 }
 
-.radiobox__button:focus {
+.radiobox__button {
   color: #00c89b;
 }
 
@@ -1174,4 +1178,52 @@ footer {
 }
 .support-form__textarea:-ms-input-placeholder {
   color: #b4b4be;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:not(old):checked + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00dba3;
+  border-radius: 50%;
+}
+input[type=radio]:not(old):checked + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #00dba3;
+  border-radius: 50%;
+}
+
+.radiobox__radio-label {
+  position: relative;
+  padding-left: 40px;
+  margin-left: -40px;
+}
+.radiobox__radio-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00dba3;
+  border-radius: 50%;
+}
+
+.radiobox {
+  margin-left: 40px;
 }

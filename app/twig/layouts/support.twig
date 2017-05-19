@@ -164,7 +164,7 @@
     </div>
 </div>
 
-<div class="popup-wrapper js-popup" data-popup="technical-support">
+<div class="popup-wrapper opened js-popup" data-popup="technical-support">
     <div class="popup">
         <section class="header header_bg mb25">
             <div class="container container_pink">
@@ -181,21 +181,21 @@
                 <p class="fz16 fw700 mb35">Обращение в службу поддержки</p>
                 <form class="support-form" id="support-form" action="#" method="get">
                     <div class="support-form__subject gray-text js-open-subject js-subject-field mb30">Укажите тему</div>
-                    <div class="subject-wrapper js-subject">
+                    <div class="subject-wrapper opened js-subject">
                         <div class="modal-subject">
-                            <p class="fz16 fw700 mb8">Укажите тему</p>
+                            <p class="fz18 fw700 mb40">Укажите тему</p>
                             <div class="subject-form">
-                                <div class="js-radiobox">
-                                    <div class="radiobox__radio fz14">
+                                <div class="js-radiobox radiobox">
+                                    <div class="radiobox__radio fz16">
                                         <input type="radio" name="group1" id="install">
-                                        <label for="install">Установка приложения</label>
+                                        <label class="radiobox__radio-label" for="install">Установка приложения</label>
                                     </div>
-                                    <div class="radiobox__radio fz14">
+                                    <div class="radiobox__radio fz16">
                                         <input type="radio" name="group1" id="error">
-                                        <label for="error">Ошибка в работе приложения</label>
+                                        <label class="radiobox__radio-label" for="error">Ошибка в работе приложения</label>
                                     </div>
                                 </div>
-                                <div class="radiobox__buttons fz14">
+                                <div class="radiobox__buttons fz16">
                                     <span class="radiobox__button js-submit-subject mr15">ОК</span>
                                     <span class="radiobox__button js-close-subject">Отмена</span>
                                 </div>
