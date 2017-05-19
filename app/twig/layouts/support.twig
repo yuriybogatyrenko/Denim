@@ -179,18 +179,33 @@
         <section class="technical-support">
             <div class="container">
                 <p class="fz16 fw700 mb35">Обращение в службу поддержки</p>
-                <form class="support-form" action="#" method="get">
-                    <div class="support-form__selectbox mb30 js-selectbox-wrapper">
-                        <select class="js-selectbox" data-placeholder="Укажите тему">
-                            <option value=""></option>
-                            <option value="1">Установка приложения</option>
-                            <option value="2">Ошибка в работе приложения</option>
-                        </select>
-                        <div class="support-form__select js-selectbox-text"></div>
+                <form class="support-form" id="support-form" action="#" method="get">
+                    <div class="support-form__subject gray-text js-open-subject js-subject-field mb30">Укажите тему</div>
+                    <div class="subject-wrapper js-subject">
+                        <div class="modal-subject">
+                            <p class="fz16 fw700 mb8">Укажите тему</p>
+                            <div class="subject-form">
+                                <div class="js-radiobox">
+                                    <div class="radiobox__radio fz14">
+                                        <input type="radio" name="group1" id="install">
+                                        <label for="install">Установка приложения</label>
+                                    </div>
+                                    <div class="radiobox__radio fz14">
+                                        <input type="radio" name="group1" id="error">
+                                        <label for="error">Ошибка в работе приложения</label>
+                                    </div>
+                                </div>
+                                <div class="radiobox__buttons fz14">
+                                    <span class="radiobox__button js-submit-subject mr15">ОК</span>
+                                    <span class="radiobox__button js-close-subject">Отмена</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input class="support-form__input mb22" name="email" type="email" placeholder="Email">
+                    <input class="support-form__input mb30" name="email" type="email" placeholder="Email">
+                    <textarea class="support-form__textarea js-auto-size mb22" placeholder="Подробности" rows="1"></textarea>
                     <p class="text-center">
-                        <button class="button button_gray button-support" type="submit">Отправить</button>
+                        <button class="button button_gray button-support" for="support-form" type="submit">Отправить</button>
                     </p>
                 </form>
             </div>
@@ -284,7 +299,7 @@
                     установить приложение через другие магазины приложений, например Yandex Store или обратиться в
                     службу поддержки:</p>
                 <p class="title down-line text-center mb15"><a class="default-link" href="#">Yandex store</a></p>
-                <p class="title down-line text-center mb15"><a class="default-link" href="#">Обратиться в поддержку</a>
+                <p class="title down-line text-center mb15"><span class="default-link js-change-popup" data-closing-popup="instruction" data-opening-popup="technical-support">Обратиться в поддержку</span>
                 </p>
             </div>
         </section>

@@ -21,10 +21,15 @@ input, textarea, button
 	font-family: inherit
 	font-size: inherit
 	font-style: inherit
+	border: none
+	outline: none
+	&:focus
+		outline: none
 
 button
 	border: none
 	outline: none
+	background: none
 
 a
 	text-decoration: none
@@ -384,6 +389,9 @@ a
 
 .support-form__select_placeholder
 	color: #b4b4be
+	
+.gray-text
+	color: #b4b4be
 
 .support-form__select_not-filled
 	color: #fa2f5b
@@ -402,9 +410,8 @@ a
 			color: #fa2f5b
 		&:-ms-input-placeholder
 			color: #fa2f5b
-	&.support-form__select
-		&::after
-			border-color: #fa2f5b
+	&.support-form__subject
+		border-color: #fa2f5b
 
 .support-form__input
 	width: 100%
@@ -413,6 +420,7 @@ a
 	font-size: 16px
 	&:focus
 		border-color: #00c89b
+		background: none
 	&::-webkit-input-placeholder
 		color: #b4b4be
 	&::-moz-placeholder
@@ -425,6 +433,9 @@ a
 input
 	border: none
 	outline: none
+	background: none
+	&:focus
+		background: none
 
 select
 	color: #000
@@ -460,6 +471,9 @@ select
 	width: 100%
 	margin: 0 auto
 
+.popup_subject
+	max-width: 320px
+
 .popup-opened
 	body
 		&::after
@@ -488,3 +502,84 @@ footer
 	&::after
 		content: '\e801'
 		color: #ec0550
+
+.support-form__subject
+	cursor: pointer
+	position: relative
+	width: 100%
+	padding: 0 5px 5px
+	font-size: 16px
+	border-bottom: 1px solid #e6e6eb
+	&::before
+		position: absolute
+		content: ''
+		top: 50%
+		right: 5px
+		width: 0
+		height: 0
+		margin-top: -3px
+		border-style: solid
+		border-width: 5px 5px 0 5px
+		border-color: #b4b4be transparent transparent transparent
+		align-self: center
+
+.subject-wrapper
+	visibility: hidden
+	opacity: 0
+	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	top: 0
+	left: 0
+	background: rgba(0,0,0,0.5)
+	width: 100%
+	height: 100%
+	+transition(all 0.3s ease)
+	&.opened
+		visibility: visible
+		opacity: 1
+		.modal-subject
+			transform: scale(1)
+
+
+.modal-subject
+	max-width: 320px
+	background-color: #FFFFFF
+	padding: 20px 30px
+	transition: (all 0.3s ease)
+	transform: scale(0)
+	z-index: 1000
+
+.radiobox__radio
+	margin-bottom: 3.5%
+	&:last-child
+		margin-bottom: 10%
+
+.radiobox__buttons
+	display: flex
+	justify-content: flex-end
+	
+.radiobox__button
+	&:focus
+		color: #00c89b
+
+.support-form__textarea
+	width: 100%
+	max-height: 250px
+	padding: 10px 5px
+	font-size: 16px
+	resize: vertical
+	border: 1px solid #e6e6eb
+	color: #000
+	outline: none
+	&:focus
+		border: 1px solid #00c89b
+	&::-webkit-input-placeholder
+		color: #b4b4be
+	&::-moz-placeholder
+		color: #b4b4be
+	&:-moz-placeholder
+		color: #b4b4be
+	&:-ms-input-placeholder
+		color: #b4b4be
