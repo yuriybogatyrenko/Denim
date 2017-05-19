@@ -737,9 +737,6 @@ a {
 .read-more.hidden::after p {
   color: transparent;
 }
-.read-more.hidden_instruction {
-  height: 0;
-}
 
 .pointer {
   cursor: pointer;
