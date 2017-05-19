@@ -449,7 +449,17 @@ app.appLoad('full', function (e) {
 
         $('.alternative-markets-slider').owlCarousel({
             autoWidth: true,
-            margin: 10
+            responsive: {
+                0: {
+                    margin: 10
+                },
+                450: {
+                    margin: 20
+                },
+                550: {
+                    margin: 30
+                }
+            }
         });
 
     })();

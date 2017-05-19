@@ -323,22 +323,33 @@ a
 
 .alternative-markets
 	padding-bottom: 30px
+	.owl-item
+		width: 20vw !important
 
 .alternative-markets-slider__item
 	display: flex
 	flex-direction: column
 	align-items: center
-	min-height: 75px
-	width: 75px
-	margin-right: 3.5vw
-	&:last-child
-		margin-right: 0
+	justify-content: center
+	width: 100%
+
+.alternative-markets-slider__image-wrapper-wrapper
+	width: 100%
+	align-self: center
+
+.alternative-markets-slider__image-wrapper
+	height: 100%
+	width: 100%
+	overflow: hidden
+	position: relative
+	padding-bottom: 100%
+
 
 .alternative-markets-slider__image
-	object-fit: contain
-	height: 75px
-	width: 75px
-	margin-bottom: 5%
+	position: absolute
+	object-fit: cover
+	width: 100%
+	height: 100%
 
 .detail-instruction__image
 	display: inline-block
