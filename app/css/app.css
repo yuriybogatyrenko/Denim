@@ -1031,6 +1031,23 @@ select:focus {
   left: 0;
   box-shadow: 0 0 500px #fff;
 }
+.popup-wrapper.thanks-popup {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  transform: scale(0);
+}
+.popup-wrapper.thanks-popup .popup {
+  margin: auto;
+  width: auto;
+  max-width: 95%;
+  background-color: #FFFFFF;
+  padding: 25px 15px 25px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.popup-wrapper.thanks-popup.opened {
+  transform: scale(1);
+}
 
 .opacity09 {
   opacity: 0.9;

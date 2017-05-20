@@ -482,6 +482,23 @@ select
 		left: 0
 		//transform: translateX(0)
 		box-shadow: 0 0 500px #fff
+		
+	&.thanks-popup
+		background: rgba(#000, 0.3)
+		left: 0
+		transform: scale(0)
+		
+		.popup
+			margin: auto
+			width: auto
+			max-width: 95%
+			background-color: #FFFFFF
+			padding: 25px 15px 25px
+			transition: all 0.3s ease
+			z-index: 1000
+			
+		&.opened
+			transform: scale(1)
 
 .opacity09
 	opacity: 0.9
