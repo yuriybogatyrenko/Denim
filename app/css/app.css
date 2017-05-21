@@ -1034,10 +1034,11 @@ select:focus {
 .popup-wrapper.thanks-popup {
   background: rgba(0, 0, 0, 0.3);
   left: 0;
-  transform: scale(0);
+  opacity: 0;
 }
 .popup-wrapper.thanks-popup .popup {
   margin: auto;
+  transform: scale(0.7);
   width: auto;
   max-width: 95%;
   background-color: #FFFFFF;
@@ -1046,6 +1047,9 @@ select:focus {
   z-index: 1000;
 }
 .popup-wrapper.thanks-popup.opened {
+  opacity: 1;
+}
+.popup-wrapper.thanks-popup.opened .popup {
   transform: scale(1);
 }
 
