@@ -21,7 +21,7 @@ var YOURAPPNAME = (function () {
         // Initialize window scollBar width
         _self.scrollWidth = _self.scrollBarWidth();
 
-        _self.autoSize(".js-auto-size");
+        // _self.autoSize(".js-auto-size");
     };
 
     // Window load types (loading, dom, full)
@@ -438,6 +438,7 @@ app.appLoad('full', function (e) {
 
         app.formValidator().checkInput($(this).find("input[name='email']"), $(this));
         app.formValidator().checkSelect($(this).find('.js-subject-field'), $(this));
+        app.popups().openPopup('thanks');
     });
 
     app.radioUpdate();

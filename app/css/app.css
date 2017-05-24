@@ -433,6 +433,9 @@ html, body {
 html.popup-opened {
   overflow: hidden;
 }
+html.popup-opened body {
+  overflow: hidden;
+}
 
 body {
   font-size: 14px;
@@ -1039,7 +1042,7 @@ select:focus {
 }
 .popup-wrapper.thanks-popup .popup {
   margin: auto;
-  transform: scale(0.7);
+  top: -20px;
   width: auto;
   max-width: 95%;
   background-color: #FFFFFF;
@@ -1052,7 +1055,7 @@ select:focus {
   visibility: visible;
 }
 .popup-wrapper.thanks-popup.opened .popup {
-  transform: scale(1);
+  top: 0;
 }
 
 .opacity09 {
