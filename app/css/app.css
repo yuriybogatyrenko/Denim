@@ -1034,6 +1034,7 @@ select:focus {
 .popup-wrapper.thanks-popup {
   background: rgba(0, 0, 0, 0.3);
   left: 0;
+  visibility: hidden;
   opacity: 0;
 }
 .popup-wrapper.thanks-popup .popup {
@@ -1048,6 +1049,7 @@ select:focus {
 }
 .popup-wrapper.thanks-popup.opened {
   opacity: 1;
+  visibility: visible;
 }
 .popup-wrapper.thanks-popup.opened .popup {
   transform: scale(1);
