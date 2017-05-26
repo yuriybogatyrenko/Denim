@@ -12,155 +12,247 @@
             </div>
         </section>
 
-        <sections class="reviews mb15">
+        {% set
+        reviews = [
+        {
+        'ava' : 'images/avatars/ava-1.png',
+        'name' : 'Николай Рудаков',
+        'rating' : '4',
+        'text' : 'Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде
+                        работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит'
+        },
+        {
+        'ava' : 'images/avatars/ava-2.png',
+        'name' : 'applevanya96',
+        'rating' : '5',
+        'text' : 'Главный плюс в том, что приложение деньги регулярно не «ест». Подписки нет, пользуешься тогда, когда СТОИТ (во всех смыслах))) острая проблема найти девушку на вечер.'
+        },
+        {
+        'ava' : 'images/avatars/ava-3.png',
+        'name' : 'Пациент цдцдцдц',
+        'rating' : '5',
+        'text' : 'Отличное приложение, нашла тут то, что искала'
+        },
+        {
+        'ava' : 'images/avatars/ava-4.png',
+        'name' : 'Валерия',
+        'rating' : '1',
+        'text' : 'Сайт отстой! Забанили на второй день после регистрации, как будто не могли сразу. Первый день он работал и очень медленно, сообщения отправлялись месяц, анкеты грузятся кое-как по сравнению с другими сайтами. Я уже молчу про сложнейшую регистрацию. На фига я все это делала! Никому не посоветую этот сайт, есть куча других более комфортных приложений для знакомств, где сразу пишут что ваши фото не подошли И так далее.
+'
+        },
+        {
+        'ava' : 'images/avatars/ava-5.png',
+        'name' : 'Dilan',
+        'rating' : '3',
+        'text' : 'Приложение для содержанок и содержателей. В сообщениях и рассылках только цены. Чистая купля-продажа товара'
+        },
+        {
+        'ava' : 'images/avatars/ava-6.png',
+        'name' : 'Алан',
+        'rating' : '5',
+        'text' : 'ПРиложение из той же серии что и Pure, только здесь финал заранее известен – пишешь напрямую, сколько готов за встречу заплатить, и едешь уже на дело сразу без всяких цветочно-конфетных периодов'
+        },
+        {
+        'ava' : 'images/avatars/ava-7.png',
+        'name' : 'Владислав',
+        'rating' : '5',
+        'text' : 'Приложение хорошие. Молодцы создатели, сделали правильный продукт для РФ.'
+        },
+        {
+        'ava' : 'images/avatars/ava-8.png',
+        'name' : 'Dinara',
+        'rating' : '4',
+        'text' : 'Крутое приложение, а гланое удобно в использовании, но чет тормозит иногда'
+        },
+        {
+        'ava' : 'images/avatars/ava-9.png',
+        'name' : 'Elena',
+        'rating' : '2',
+        'text' : 'Приложение работает плохо. Не совмещается с сайтом. Сообщения ходят через *опу или совсем не ходят.'
+        },
+        {
+        'ava' : 'images/avatars/ava-10.png',
+        'name' : 'Евгений Мальцев',
+        'rating' : '4',
+        'text' : 'Одно из лучших приложений для знакомств. Хорошая графика, возможность поставить фотографии все это делает знакомства ещё интересней.'
+        },
+        {
+        'ava' : 'images/avatars/ava-11.png',
+        'name' : 'Малышка',
+        'rating' : '4',
+        'text' : 'Парни тут бывают жадными, но это суть всех парней, так вроде приложение нормальное'
+        },
+        {
+        'ava' : 'images/avatars/ava-12.png',
+        'name' : 'Троль',
+        'rating' : '1',
+        'text' : 'Хрень. Нельзя написать даже сообщение - требуют премиум аккаунт, который причем стоит нехилых денег. Тиндер плюс - дешевле) Постоянно пишут проститутки, да и вообще их там полно.'
+        },
+        ] %}
+
+        <section class="reviews mb15">
             <div class="container">
                 <p class="fz16 fw700 mb15">Отзывы</p>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/nickolai.png" alt="">
+
+                <div class="reviews__list">
+                    {% for item in reviews %}
+                        <div class="reviews__item">
+                            <div class="review-header">
+                                <div class="review-header__photo-wrapper mr7">
+                                    <div class="review-header__photo">
+                                        <img class="round" src="{{ item.ava }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="review-header__info">
+                                    <div class="review-header__author mb3">{{ item.name }}</div>
+                                    <div class="review-header__rating">
+                                        {% for i in 1..item.rating %}
+                                            <i class="icon-star icon-star_filled mr3"></i>
+                                        {% endfor %}
+                                        {% if item.rating < 5 %}
+                                            {% for i in 1..(5-item.rating) %}
+                                                <i class="icon-star icon-star_gray mr3"></i>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__body">
+                                {{ item.text }}
                             </div>
                         </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Николай Рудаков</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
+                    {% endfor %}
+                    {#<div class="reviews__item">
+                        <div class="review-header">
+                            <div class="review-header__photo-wrapper mr7">
+                                <div class="review-header__photo">
+                                    <img class="round" src="images/avatars/ava-2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="review-header__info">
+                                <div class="review-header__author mb3">Алексей Коротаев</div>
+                                <div class="review-header__rating">
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_gray"></i>
+                                </div>
                             </div>
                         </div>
+                        <div class="reviews__body">
+                            Справедливости ради надо скзаать , что за свои деньги пусть и не такие малеьнькие по
+                            сравнению с
+                            другими сервисами получаешь вполне себе внятный продукт про знакомства без обязательств.
+                        </div>
                     </div>
-                    <div class="reviews__body">
-                        Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде
-                        работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит
+                    <div class="reviews__item">
+                        <div class="review-header">
+                            <div class="review-header__photo-wrapper mr7">
+                                <div class="review-header__photo">
+                                    <img class="round" src="images/avatars/ava-3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="review-header__info">
+                                <div class="review-header__author mb3">Dinara Murzagulova</div>
+                                <div class="review-header__rating">
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_gray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__body">
+                            Узнала про этот продукт через «Бешенство Машки», которая его рекламировала. Доверяю ей во
+                            многих
+                            вопросах, поэтому скачала и сейчас хочу посоветовать тем девочкам, которые попали в тяжелую
+                            ситуацию как я (пару месяцев была вынуждена уйти с работы и денег вообще не было). Мужчины
+                            стали
+                            помогать, на этом сервисе много таких, причем вполне себе симпатичных, для которых нужно
+                            чуть
+                            больше чем просто знакомства…
+                        </div>
                     </div>
+                    <div class="reviews__item">
+                        <div class="review-header">
+                            <div class="review-header__photo-wrapper mr7">
+                                <div class="review-header__photo">
+                                    <img class="round" src="images/avatars/ava-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="review-header__info">
+                                <div class="review-header__author mb3">Николай Рудаков</div>
+                                <div class="review-header__rating">
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_gray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__body">
+                            Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде
+                            работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="review-header">
+                            <div class="review-header__photo-wrapper mr7">
+                                <div class="review-header__photo">
+                                    <img class="round" src="images/avatars/ava-5.png" alt="">
+                                </div>
+                            </div>
+                            <div class="review-header__info">
+                                <div class="review-header__author mb3">Алексей Коротаев</div>
+                                <div class="review-header__rating">
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_gray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__body">
+                            Справедливости ради надо сказать , что за свои деньги пусть и не такие малеьнькие по
+                            сравнению с
+                            другими сервисами получаешь вполне себе внятный продукт про знакомства без обязательств.
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="review-header">
+                            <div class="review-header__photo-wrapper mr7">
+                                <div class="review-header__photo">
+                                    <img class="round" src="images/avatars/ava-6.png" alt="">
+                                </div>
+                            </div>
+                            <div class="review-header__info">
+                                <div class="review-header__author mb3">Dinara Murzagulova</div>
+                                <div class="review-header__rating">
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_filled mr3"></i>
+                                    <i class="icon-star icon-star_gray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__body">
+                            Узнала про этот продукт через «Бешенство Машки», которая его рекламировала. Доверяю ей во
+                            многих
+                            вопросах, поэтому скачала и сейчас хочу посоветовать тем девочкам, которые попали в тяжелую
+                            ситуацию как я (пару месяцев была вынуждена уйти с работы и денег вообще не было). Мужчины
+                            стали
+                            помогать, на этом сервисе много таких, причем вполне себе симпатичных, для которых нужно
+                            чуть
+                            больше чем просто знакомства…
+                        </div>
+                    </div>#}
                 </div>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/aleksei.png" alt="">
-                            </div>
-                        </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Алексей Коротаев</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__body">
-                        Справедливости ради надо скзаать , что за свои деньги пусть и не такие малеьнькие по сравнению с
-                        другими сервисами получаешь вполне себе внятный продукт про знакомства без обязательств.
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/dinara.png" alt="">
-                            </div>
-                        </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Dinara Murzagulova</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__body">
-                        Узнала про этот продукт через «Бешенство Машки», которая его рекламировала. Доверяю ей во многих
-                        вопросах, поэтому скачала и сейчас хочу посоветовать тем девочкам, которые попали в тяжелую
-                        ситуацию как я (пару месяцев была вынуждена уйти с работы и денег вообще не было). Мужчины стали
-                        помогать, на этом сервисе много таких, причем вполне себе симпатичных, для которых нужно чуть
-                        больше чем просто знакомства…
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/nickolai.png" alt="">
-                            </div>
-                        </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Николай Рудаков</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__body">
-                        Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде
-                        работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/aleksei.png" alt="">
-                            </div>
-                        </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Алексей Коротаев</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__body">
-                        Справедливости ради надо сказать , что за свои деньги пусть и не такие малеьнькие по сравнению с
-                        другими сервисами получаешь вполне себе внятный продукт про знакомства без обязательств.
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="review-header">
-                        <div class="review-header__photo-wrapper mr7">
-                            <div class="review-header__photo">
-                                <img class="round" src="images/dinara.png" alt="">
-                            </div>
-                        </div>
-                        <div class="review-header__info">
-                            <div class="review-header__author mb3">Dinara Murzagulova</div>
-                            <div class="review-header__rating">
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_filled mr3"></i>
-                                <i class="icon-star icon-star_gray"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__body">
-                        Узнала про этот продукт через «Бешенство Машки», которая его рекламировала. Доверяю ей во многих
-                        вопросах, поэтому скачала и сейчас хочу посоветовать тем девочкам, которые попали в тяжелую
-                        ситуацию как я (пару месяцев была вынуждена уйти с работы и денег вообще не было). Мужчины стали
-                        помогать, на этом сервисе много таких, причем вполне себе симпатичных, для которых нужно чуть
-                        больше чем просто знакомства…
-                    </div>
-                </div>
-            </div>
-        </sections>
+        </section>
     </div>
 </div>
 
@@ -180,7 +272,8 @@
             <div class="container">
                 <p class="fz16 fw700 mb35">Обращение в службу поддержки</p>
                 <form class="support-form" id="support-form" action="#" method="get">
-                    <div class="support-form__subject gray-text js-open-subject js-subject-field mb30">Укажите тему</div>
+                    <div class="support-form__subject gray-text js-open-subject js-subject-field mb30">Укажите тему
+                    </div>
                     <div class="subject-wrapper js-subject">
                         <div class="modal-subject">
                             <p class="fz18 fw700 mb40">Укажите тему</p>
@@ -192,7 +285,8 @@
                                     </div>
                                     <div class="radiobox__radio fz16">
                                         <input type="radio" name="group1" id="error">
-                                        <label class="radiobox__radio-label" for="error">Ошибка в работе приложения</label>
+                                        <label class="radiobox__radio-label" for="error">Ошибка в работе
+                                            приложения</label>
                                     </div>
                                 </div>
                                 <div class="radiobox__buttons fz16">
@@ -203,9 +297,11 @@
                         </div>
                     </div>
                     <input class="support-form__input mb30" name="email" type="email" placeholder="Email">
-                    <textarea class="support-form__textarea js-auto-size mb22" placeholder="Опишите вашу проблему" rows="1"></textarea>
+                    <textarea class="support-form__textarea js-auto-size mb22" placeholder="Опишите вашу проблему"
+                              rows="1"></textarea>
                     <p class="text-center">
-                        <button class="button button_gray button-support" for="support-form" type="submit">Отправить</button>
+                        <button class="button button_gray button-support" for="support-form" type="submit">Отправить
+                        </button>
                     </p>
                 </form>
             </div>
@@ -239,7 +335,7 @@
                 </div>
                 <p class="text-darkest-green fz13 fw500">По техническим причинам приложение для скачивания через Google
                     Play временно недоступно, <strong>ниже Вы найдете подробные инструкции как установить Denim на свой
-                    смартфон.</strong></p>
+                        смартфон.</strong></p>
             </div>
         </section>
 
@@ -268,7 +364,8 @@
                 <div class="read-more hidden mb15">
                     <div class="read-more__wrapper">
                         <p class="fz16 fw700 mb8">Подробная инструкция с картинками</p>
-                        <p class="fz14 mb8 has-hidden-add">Вам необходимо перейти в настройки устройства, это можно сделать опустив
+                        <p class="fz14 mb8 has-hidden-add">Вам необходимо перейти в настройки устройства, это можно
+                            сделать опустив
                             панель уведомлений (шторку) вниз и в правом верхнем углу нажать на значок шестеренки или
                             перейти в настройки из самого уведомления.</p>
                         <img class="detail-instruction__image mb15" src="images/detail-instruction-1.jpg" alt="">
@@ -289,17 +386,20 @@
                         <img class="detail-instruction__image mb15" src="images/detail-instruction-6.jpg" alt="">
                         <p class="fz14 mb8">Либо найдите файл в шторке уведомлений.</p>
                         <div class="mb15"><img class="detail-instruction__image"
-                                                         src="images/detail-instruction-7.jpg" alt=""></div>
+                                               src="images/detail-instruction-7.jpg" alt=""></div>
                     </div>
                 </div>
-                <p class="js-read-more-button down-line title title_readmore text-center"><span class="pointer">Показать</span>
+                <p class="js-read-more-button down-line title title_readmore text-center"><span
+                            class="pointer">Показать</span>
                 </p>
                 <p class="fz12 top-line text-gray mb20">Обращаем Ваше внимание, на разных моделях устройств и версиях
                     операционных систем, могут быть незначительные графические различия.</p>
                 <p class="fz12 text-gray mb15">Если у Вас возникли сложности при установке, то Вы также можете
                     установить приложение через другие магазины приложений или обратиться в
                     службу поддержки:</p>
-                <p class="title down-line text-center mb15"><span class="default-link js-change-popup" data-closing-popup="instruction" data-opening-popup="technical-support">Обратиться в поддержку</span>
+                <p class="title down-line text-center mb15"><span class="default-link js-change-popup"
+                                                                  data-closing-popup="instruction"
+                                                                  data-opening-popup="technical-support">Обратиться в поддержку</span>
                 </p>
             </div>
         </section>
