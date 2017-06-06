@@ -273,56 +273,56 @@ var YOURAPPNAME = (function () {
     };
 
     /*YOURAPPNAME.prototype.selectBox = function (selector) {
-        var _self = this;
+     var _self = this;
 
-        var selectBox = {
-            init: function () {
-                selectBox.bindings();
+     var selectBox = {
+     init: function () {
+     selectBox.bindings();
 
-                $(selector).each(function () {
-                    selectBox.update($(this));
-                });
-            },
-            bindings: function () {
-                $(selector).on('change', function (e) {
-                    e.preventDefault();
-                    selectBox.update($(this));
-                    $(this).addClass('js-touched');
-                    _self.formValidator().checkSelect($(this), $(this).closest('form'));
-                });
-            },
-            update: function (bl) {
-                var $this = bl,
-                    selectedOpt = $this.find('option:selected'),
-                    selectText = selectedOpt.text(),
-                    selectWrapper = $this.closest('.js-selectbox-wrapper'),
-                    fakeSelect = selectWrapper.find('.js-selectbox-text');
+     $(selector).each(function () {
+     selectBox.update($(this));
+     });
+     },
+     bindings: function () {
+     $(selector).on('change', function (e) {
+     e.preventDefault();
+     selectBox.update($(this));
+     $(this).addClass('js-touched');
+     _self.formValidator().checkSelect($(this), $(this).closest('form'));
+     });
+     },
+     update: function (bl) {
+     var $this = bl,
+     selectedOpt = $this.find('option:selected'),
+     selectText = selectedOpt.text(),
+     selectWrapper = $this.closest('.js-selectbox-wrapper'),
+     fakeSelect = selectWrapper.find('.js-selectbox-text');
 
-                if (selectText === '') {
-                    selectText = $this.data('placeholder');
-                    fakeSelect.addClass('support-form__select_placeholder');
-                } else {
-                    fakeSelect.removeClass('support-form__select_placeholder');
-                }
+     if (selectText === '') {
+     selectText = $this.data('placeholder');
+     fakeSelect.addClass('support-form__select_placeholder');
+     } else {
+     fakeSelect.removeClass('support-form__select_placeholder');
+     }
 
-                fakeSelect.text(selectText);
-            }
-        };
+     fakeSelect.text(selectText);
+     }
+     };
 
-        if (selector)
-            selectBox.init();
+     if (selector)
+     selectBox.init();
 
-        return selectBox;
-    };*/
+     return selectBox;
+     };*/
 
     YOURAPPNAME.prototype.radioUpdate = function () {
         var _self = this;
         var subjectForm = {
-            init: function() {
+            init: function () {
 
                 subjectForm.bindings();
             },
-            bindings: function() {
+            bindings: function () {
                 $('.js-submit-subject').on('click', function () {
                     subjectForm.update(".js-radiobox", ".js-subject-field");
                     $(this).closest(".js-subject").removeClass("opened");
@@ -330,7 +330,7 @@ var YOURAPPNAME = (function () {
 
                 });
             },
-            update: function(radiobox, subjectField) {
+            update: function (radiobox, subjectField) {
                 var radioboxRadio = $(radiobox).children('.radiobox__radio'),
                     radioValue = radioboxRadio.children("input[type='radio']:checked").next("label").text();
 
@@ -349,7 +349,7 @@ var YOURAPPNAME = (function () {
     YOURAPPNAME.prototype.formValidator = function () {
         var validator = {
             checkSelect: function (select, form) {
-                if($(select).text() === 'Укажите тему') {
+                if ($(select).text() === 'Укажите тему') {
                     $(select).addClass('has-error');
                     validator.buttonChange(true, form);
 
@@ -360,7 +360,7 @@ var YOURAPPNAME = (function () {
             },
             checkInput: function (input, form) {
                 // console.log(input);
-                if(input.val().length < 3) {
+                if (input.val().length < 3) {
                     input.addClass('has-error');
                     validator.buttonChange(true, form);
                 } else {
@@ -372,16 +372,16 @@ var YOURAPPNAME = (function () {
                 var touched = true;
 
                 form.find('input[name="email"], select').each(function () {
-                    if(!$(this).hasClass('js-touched'))
+                    if (!$(this).hasClass('js-touched'))
                         touched = false;
                 });
 
-                if(touched === false)
+                if (touched === false)
                     return;
 
                 var button = form.find('button[type="submit"]');
 
-                if(type){
+                if (type) {
                     button.addClass("button_gray");
                     button.removeClass("button_persian-green");
                 } else {
@@ -401,7 +401,6 @@ var YOURAPPNAME = (function () {
     return YOURAPPNAME;
 
 })();
-
 
 
 var app = new YOURAPPNAME(document);
@@ -466,7 +465,7 @@ app.appLoad('full', function (e) {
         if (readmore.hasClass("hidden")) {
             readmore.css('height', readmoreHeight);
             setTimeout(function () {
-                readmore.removeClass("hidden").css('height','auto');
+                readmore.removeClass("hidden").css('height', 'auto');
                 $this.addClass("display-none");
             }, 300)
         }
@@ -480,7 +479,7 @@ app.appLoad('full', function (e) {
         $(this).closest(".js-subject").removeClass("opened");
     })
 
-    $('.subject-wrapper').mousedown(function(e) {
+    $('.subject-wrapper').mousedown(function (e) {
         var clicked = $(e.target);
         if (clicked.is('.modal-subject') || clicked.parents().is('.modal-subject')) {
             return;
@@ -491,19 +490,41 @@ app.appLoad('full', function (e) {
 
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    var fontSize = $(".container:eq(0)").width()/(22.85*1.2);
-    if(fontSize < 14)
+    var fontSize = $(".container:eq(0)").width() / (22.85 * 1.2);
+    if (fontSize < 14)
         fontSize = 14;
     $('body').css('font-size', fontSize);
 
-    $(window).resize(function() {
-        var fontSize = $(".container:eq(0)").width()/(22.85*1.2);
-        if(fontSize < 14)
+    $(window).resize(function () {
+        var fontSize = $(".container:eq(0)").width() / (22.85 * 1.2);
+        if (fontSize < 14)
             fontSize = 14;
         $('body').css('font-size', fontSize);
     });
 
 });
 
+function rating() {
+    var allScore = $('.js-score'),
+        allReviewsCount = parseInt($(".js-reviews-all-count").html()),
+        fiveReviews = $(".js-reviews-five-count"),
+        fourReviews = $(".js-reviews-four-count"),
+        threeReviews = $(".js-reviews-three-count"),
+        twoReviews = $(".js-reviews-two-count"),
+        oneReviews = $(".js-reviews-one-count"),
+        fiveReviewsCount = parseInt($(".js-reviews-five-count").html()),
+        fourReviewsCount = parseInt($(".js-reviews-four-count").html()),
+        threeReviewsCount = parseInt($(".js-reviews-three-count").html()),
+        twoReviewsCount = parseInt($(".js-reviews-two-count").html()),
+        oneReviewsCount = parseInt($(".js-reviews-one-count").html());
+    fiveReviews.css('width',+fiveReviewsCount*100/allReviewsCount+'%');
+    fourReviews.css('width',+fourReviewsCount*100/allReviewsCount+'%');
+    threeReviews.css('width',+threeReviewsCount*100/allReviewsCount+'%');
+    twoReviews.css('width',+twoReviewsCount*100/allReviewsCount+'%');
+    oneReviews.css('width',+oneReviewsCount*100/allReviewsCount+'%');
+
+}
+
+rating();

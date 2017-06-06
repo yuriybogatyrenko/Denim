@@ -1,4 +1,4 @@
-<div class="popup-wrapper js-popup" data-popup="all-reviews">
+<div class="popup-wrapper js-popup opened" data-popup="all-reviews">
     <div class="popup">
 
         <section class="header header_bg mb25">
@@ -93,7 +93,30 @@
         <section class="reviews mb15">
             <div class="container">
                 <p class="fz16 fw700 mb15">Отзывы</p>
-
+                <div class="rating mb10">
+                    <div class="score-container mr20">
+                        <div class="score js-score">4,7</div>
+                        <div class="stars mb40">
+                            <div class="all-stars">
+                                <i class="fri fri_five-stars"></i>
+                                <div class="current-stars-container">
+                                    <i class="fri fri_five-stars-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-stats">
+                            <i class="fri fri_user-stats mr05"></i>
+                            <span class="reviews-stats__reviews-count">Оценок: <span class="js-reviews-all-count">252</span></span>
+                        </div>
+                    </div>
+                    <div class="histogram-container">
+                        <div class="rating-bar-container rating-bar-container__five js-reviews-five-count">138</div>
+                        <div class="rating-bar-container rating-bar-container__four js-reviews-four-count">59</div>
+                        <div class="rating-bar-container rating-bar-container__three js-reviews-three-count">26</div>
+                        <div class="rating-bar-container rating-bar-container__two js-reviews-two-count">8</div>
+                        <div class="rating-bar-container rating-bar-container__one js-reviews-one-count">21</div>
+                    </div>
+                </div>
                 <div class="reviews__list">
                     {% for item in reviews %}
                         <div class="reviews__item">
@@ -406,7 +429,7 @@
     </div>
 </div>
 
-<div class="popup-wrapper opened js-popup thanks-popup" data-popup="thanks">
+<div class="popup-wrapper js-popup thanks-popup" data-popup="thanks">
     <div class="popup">
         <div class="js-subject">
             <div class="">
