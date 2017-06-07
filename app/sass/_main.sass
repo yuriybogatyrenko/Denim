@@ -50,7 +50,7 @@ a
 
 .container
 	max-width: 768px
-	min-width: 320px
+	min-width: 290px
 	width: 100%
 	padding-left: 15px
 	padding-right: 15px
@@ -313,6 +313,9 @@ a
 .review-header__author
 	font-size: 86%
 	font-weight: 500
+	display: flex
+	justify-content: space-between
+	align-items: center
 
 .review-header__rating
 	display: flex
@@ -320,6 +323,7 @@ a
 .review-header__info
 	display: flex
 	flex-direction: column
+	flex-grow: 1
 
 .reviews__body
 	font-style: italic
@@ -765,3 +769,18 @@ input[type=radio]:not(old):checked + label
 	background-color: #ff8b58
 	&::after
 		content: '1'
+
+.review-header__author-icon
+	display: flex
+	align-items: center
+
+.review-header__author-menu-icon
+	color: #757575
+	font-size: 40px
+	line-height: 1
+	cursor: pointer
+	&:hover
+		color: #444444
+
+.fri_like
+	cursor: pointer

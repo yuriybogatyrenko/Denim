@@ -127,7 +127,15 @@
                                     </div>
                                 </div>
                                 <div class="review-header__info">
-                                    <div class="review-header__author mb3">{{ item.name }}</div>
+                                    <div class="review-header__author mb3">
+                                        <div class="review-header__author-name">
+                                            {{ item.name }}
+                                        </div>
+                                        <div class="review-header__author-icon">
+                                            <i class="fri fri_like mr3"></i>
+                                            <span class="review-header__author-menu-icon">⠇</span>
+                                        </div>
+                                    </div>
                                     <div class="review-header__rating">
                                         {% for i in 1..item.rating %}
                                             <i class="icon-star icon-star_filled mr3"></i>
