@@ -519,11 +519,11 @@ function rating() {
         threeReviewsCount = parseInt($(".js-reviews-three-count").html()),
         twoReviewsCount = parseInt($(".js-reviews-two-count").html()),
         oneReviewsCount = parseInt($(".js-reviews-one-count").html());
-    fiveReviews.css('width',+fiveReviewsCount*100/allReviewsCount+'%');
-    fourReviews.css('width',+fourReviewsCount*100/allReviewsCount+'%');
-    threeReviews.css('width',+threeReviewsCount*100/allReviewsCount+'%');
-    twoReviews.css('width',+twoReviewsCount*100/allReviewsCount+'%');
-    oneReviews.css('width',+oneReviewsCount*100/allReviewsCount+'%');
+    fiveReviews.css('width',+100-(fiveReviewsCount*100/allReviewsCount)+(fiveReviewsCount*100/allReviewsCount)+'%');
+    fourReviews.css('width',+fourReviewsCount*100/(fiveReviewsCount)+'%');
+    threeReviews.css('width',+threeReviewsCount*100/fiveReviewsCount+'%');
+    twoReviews.css('width',+twoReviewsCount*100/fiveReviewsCount+'%');
+    oneReviews.css('width',+oneReviewsCount*100/fiveReviewsCount+'%');
 
 }
 

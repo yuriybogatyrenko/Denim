@@ -695,8 +695,9 @@ input[type=radio]:not(old):checked + label
 
 .reviews-stats__reviews-count
 	font-weight: 400
-	font-size: 60%
+	font-size: 90%
 	line-height: 1
+	flex-shrink: 0
 
 .score-container
 	display: flex
@@ -705,16 +706,16 @@ input[type=radio]:not(old):checked + label
 
 .all-stars
 	position: relative
-	width: 106px
 	
 .fri_five-stars, .fri_five-stars-current
 	position: absolute
 
 .current-stars-container
-	position: relative
+	position: absolute
 	overflow: hidden
 	width: 93%
-	height: 15px
+	white-space: nowrap
+	top: 0
 
 .histogram-container
 	flex-grow: 1
@@ -722,18 +723,12 @@ input[type=radio]:not(old):checked + label
 
 .rating-bar-container
 	padding: 5px 0 5px 5px
-	font-size: 70%
+	font-size: 90%
 	line-height: 1
 	margin-bottom: 1%
 	position: relative
 	&:last-child
 		margin-bottom: 0
-	&::before
-		position: absolute
-		content: ''
-		left: -40px
-		top: 50%
-		transform: translateY(-50%)
 
 .rating-bar-container__five, .rating-bar-container__four, .rating-bar-container__three, .rating-bar-container__two, .rating-bar-container__one
 	background-color: #a0c05b
@@ -746,29 +741,19 @@ input[type=radio]:not(old):checked + label
 		transform: translateY(-50%)
 
 .rating-bar-container__five
-	background-color: #add62f
-	&::after
-		content: '5'
+	background-color: #88b131
 
 .rating-bar-container__four
 	background-color: #add62f
-	&::after
-		content: '4'
 
 .rating-bar-container__three
 	background-color: #ffd832
-	&::after
-		content: '3'
 
 .rating-bar-container__two
 	background-color: #f9b246
-	&::after
-		content: '2'
 
 .rating-bar-container__one
 	background-color: #ff8b58
-	&::after
-		content: '1'
 
 .review-header__author-icon
 	display: flex
@@ -776,7 +761,7 @@ input[type=radio]:not(old):checked + label
 
 .review-header__author-menu-icon
 	color: #757575
-	font-size: 40px
+	font-size: 180%
 	line-height: 1
 	cursor: pointer
 	&:hover
@@ -784,3 +769,21 @@ input[type=radio]:not(old):checked + label
 
 .fri_like
 	cursor: pointer
+
+.icon-user
+	margin-right: 4%
+	
+.histogram-line
+	display: flex
+
+.histogram-line__val
+	padding: 5px 0
+	font-size: 90%
+	line-height: 1
+
+.histogram-line
+	.icon-star
+		font-size: 100%
+		line-height: 1
+		padding-top: 3px
+		top: -1px

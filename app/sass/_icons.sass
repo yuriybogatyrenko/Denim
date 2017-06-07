@@ -49,14 +49,18 @@
 	&::before
 		font-size: 70%
 		content: '\e803'
+	&.icon-star_light-gray
+		&::before
+			color: #e4e4e4
 	&.icon-star_gray
 		&::before
 			color: #d8d8d8
+	&.icon-star_dark-gray
+		&::before
+			color: #737373
 	&.icon-star_filled
 		&::before
 			color: #00c89b
-
-
 .icon-dot
 	&::before
 		content: '\e804'
@@ -70,11 +74,31 @@
 .fri_user-stats
 	+sprite(user-stats)
 
-.rating-bar-container
-	&::before
-		+sprite(star-dark-gray)
+//.rating-bar-container
+//	&::before
+//		font-family: "fontello"
+//		position: absolute
+//		left: -45px
+//		top: 50%
+//		transform: translateY(-50%)
+//		font-size: 90%
+//		content: '\e803'
+//		color: #737373
 
-.fri_like
-	+sprite(like)
-	&:hover
-		+sprite(like-hover)
+.icon-like
+	&::before
+		font-family: "fontello-2"
+		font-style: normal
+		font-weight: normal
+		content: '\E800'
+		color: #737373
+		font-size: 125%
+
+.icon-user
+	&::before
+		font-family: "fontello-2"
+		font-style: normal
+		font-weight: normal
+		content: '\F063'
+		color: #737373
+		font-size: 100%
