@@ -28,9 +28,11 @@
     {% include "stylesheets.twig" %}
 </head>
 <body>
+    {% if small_header == 'false' %}
     <!-- Header block -->
     {% include "header.twig" %}
     <!-- Header block end -->
+    {% endif %}
 
     <!-- Block content -->
     {% block content %}{% endblock %}

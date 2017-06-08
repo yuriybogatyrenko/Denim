@@ -1,0 +1,192 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Denim by Золушка project | Отзывы{% endblock %}
+
+{% set small_header = 'true' %}
+
+{% block content %}
+
+        <section class="header header_bg mb25">
+            <div class="container container_pink">
+                <div class="header-flex header-flex_popup">
+                    <div class="header__logo">
+                        <p class="logo-title text-white fz36 text-center">Denim</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% set
+        reviews = [
+        {
+        'ava' : 'images/avatars/ava-1.png',
+        'name' : 'Николай Рудаков',
+        'rating' : '4',
+        'text' : 'Регистрировался где-то полгода назад, приложение глючило еще.. Сейчас уже без багов вроде
+                        работает. Качать можно. Но девочки, в основном, с серьезными запросами. На шару не прокатит'
+        },
+        {
+        'ava' : 'images/avatars/ava-2.png',
+        'name' : 'applevanya96',
+        'rating' : '5',
+        'text' : 'Главный плюс в том, что приложение деньги регулярно не «ест». Подписки нет, пользуешься тогда, когда СТОИТ (во всех смыслах))) острая проблема найти девушку на вечер.'
+        },
+        {
+        'ava' : 'images/avatars/ava-3.png',
+        'name' : 'Пациент цдцдцдц',
+        'rating' : '5',
+        'text' : 'Отличное приложение, нашла тут то, что искала'
+        },
+        {
+        'ava' : 'images/avatars/ava-4.png',
+        'name' : 'Валерия',
+        'rating' : '1',
+        'text' : 'Сайт отстой! Забанили на второй день после регистрации, как будто не могли сразу. Первый день он работал и очень медленно, сообщения отправлялись месяц, анкеты грузятся кое-как по сравнению с другими сайтами. Я уже молчу про сложнейшую регистрацию. На фига я все это делала! Никому не посоветую этот сайт, есть куча других более комфортных приложений для знакомств, где сразу пишут что ваши фото не подошли И так далее.
+'
+        },
+        {
+        'ava' : 'images/avatars/ava-5.png',
+        'name' : 'Dilan',
+        'rating' : '3',
+        'text' : 'Приложение для содержанок и содержателей. В сообщениях и рассылках только цены. Чистая купля-продажа товара'
+        },
+        {
+        'ava' : 'images/avatars/ava-6.png',
+        'name' : 'Алан',
+        'rating' : '5',
+        'text' : 'ПРиложение из той же серии что и Pure, только здесь финал заранее известен – пишешь напрямую, сколько готов за встречу заплатить, и едешь уже на дело сразу без всяких цветочно-конфетных периодов'
+        },
+        {
+        'ava' : 'images/avatars/ava-7.png',
+        'name' : 'Владислав',
+        'rating' : '5',
+        'text' : 'Приложение хорошие. Молодцы создатели, сделали правильный продукт для РФ.'
+        },
+        {
+        'ava' : 'images/avatars/ava-8.png',
+        'name' : 'Dinara',
+        'rating' : '4',
+        'text' : 'Крутое приложение, а гланое удобно в использовании, но чет тормозит иногда'
+        },
+        {
+        'ava' : 'images/avatars/ava-9.png',
+        'name' : 'Elena',
+        'rating' : '2',
+        'text' : 'Приложение работает плохо. Не совмещается с сайтом. Сообщения ходят через *опу или совсем не ходят.'
+        },
+        {
+        'ava' : 'images/avatars/ava-10.png',
+        'name' : 'Евгений Мальцев',
+        'rating' : '4',
+        'text' : 'Одно из лучших приложений для знакомств. Хорошая графика, возможность поставить фотографии все это делает знакомства ещё интересней.'
+        },
+        {
+        'ava' : 'images/avatars/ava-11.png',
+        'name' : 'Малышка',
+        'rating' : '4',
+        'text' : 'Парни тут бывают жадными, но это суть всех парней, так вроде приложение нормальное'
+        },
+        {
+        'ava' : 'images/avatars/ava-12.png',
+        'name' : 'Троль',
+        'rating' : '1',
+        'text' : 'Хрень. Нельзя написать даже сообщение - требуют премиум аккаунт, который причем стоит нехилых денег. Тиндер плюс - дешевле) Постоянно пишут проститутки, да и вообще их там полно.'
+        },
+        ] %}
+
+        <section class="reviews mb15">
+            <div class="container">
+                <p class="fz16 fw700 mb15">Отзывы</p>
+                <div class="rating mb10">
+                    <div class="score-container mr10">
+                        <div class="score js-score">4,7</div>
+                        <div class="stars mb40">
+                            <div class="all-stars">
+                                <i class="icon-star icon-star_light-gray"></i>
+                                <i class="icon-star icon-star_light-gray"></i>
+                                <i class="icon-star icon-star_light-gray"></i>
+                                <i class="icon-star icon-star_light-gray"></i>
+                                <i class="icon-star icon-star_light-gray"></i>
+                                <div class="current-stars-container">
+                                    <i class="icon-star icon-star_dark-gray"></i>
+                                    <i class="icon-star icon-star_dark-gray"></i>
+                                    <i class="icon-star icon-star_dark-gray"></i>
+                                    <i class="icon-star icon-star_dark-gray"></i>
+                                    <i class="icon-star icon-star_dark-gray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-stats">
+                            <i class="icon-user"></i>
+                            <span class="reviews-stats__reviews-count">Оценок: <span class="js-reviews-all-count">252</span></span>
+                        </div>
+                    </div>
+                    <div class="histogram-container">
+                        <div class="histogram-line">
+                            <i class="icon-star icon-star_dark-gray mr3"></i>
+                            <span class="histogram-line__val mr3">5</span>
+                            <div class="rating-bar-container rating-bar-container__five js-reviews-five-count">138</div>
+                        </div>
+                        <div class="histogram-line">
+                            <i class="icon-star icon-star_dark-gray mr3"></i>
+                            <span class="histogram-line__val mr3">4</span>
+                            <div class="rating-bar-container rating-bar-container__four js-reviews-four-count">59</div>
+                        </div>
+                        <div class="histogram-line">
+                            <i class="icon-star icon-star_dark-gray mr3"></i>
+                            <span class="histogram-line__val mr3">3</span>
+                            <div class="rating-bar-container rating-bar-container__three js-reviews-three-count">26</div>
+                        </div>
+                        <div class="histogram-line">
+                            <i class="icon-star icon-star_dark-gray mr3"></i>
+                            <span class="histogram-line__val mr3">2</span>
+                            <div class="rating-bar-container rating-bar-container__two js-reviews-two-count">8</div>
+                        </div>
+                        <div class="histogram-line">
+                            <i class="icon-star icon-star_dark-gray mr3"></i>
+                            <span class="histogram-line__val mr3">1</span>
+                            <div class="rating-bar-container rating-bar-container__one js-reviews-one-count">21</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__list">
+                    {% for item in reviews %}
+                        <div class="reviews__item">
+                            <div class="review-header">
+                                <div class="review-header__photo-wrapper mr7">
+                                    <div class="review-header__photo">
+                                        <img class="round" src="{{ item.ava }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="review-header__info">
+                                    <div class="review-header__author mb3">
+                                        <div class="review-header__author-name">
+                                            {{ item.name }}
+                                        </div>
+                                        <div class="review-header__author-icon">
+                                            <i class="icon-like mr3"></i>
+                                            <span class="review-header__author-menu-icon">⠇</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-header__rating">
+                                        {% for i in 1..item.rating %}
+                                            <i class="icon-star icon-star_filled mr3"></i>
+                                        {% endfor %}
+                                        {% if item.rating < 5 %}
+                                            {% for i in 1..(5-item.rating) %}
+                                                <i class="icon-star icon-star_gray mr3"></i>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__body">
+                                {{ item.text }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
