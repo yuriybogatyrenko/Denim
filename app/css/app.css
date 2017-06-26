@@ -254,7 +254,7 @@
 }
 
 .fri_app-logo-70 {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 -65px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -265,7 +265,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_app-logo-70 {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 -63px;
     height: 70px;
@@ -274,7 +274,7 @@
 }
 
 .fri_app-logo-60 {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 0;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -285,7 +285,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_app-logo-60 {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 0;
     height: 60px;
@@ -294,7 +294,7 @@
 }
 
 .fri_downloads {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 -140px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -305,7 +305,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_downloads {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 -135px;
     height: 16px;
@@ -314,8 +314,8 @@
 }
 
 .fri_reviews {
-  background-image: url('../images/icons-s10e2b72c93.png');
-  background-position: 0 -309px;
+  background-image: url('../images/icons-s78677ed0e1.png');
+  background-position: 0 -350px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -325,16 +325,16 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_reviews {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
-    background-position: 0 -289px;
+    background-position: 0 -328px;
     height: 16px;
     width: 17px;
   }
 }
 
 .fri_ggl-play {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 -201px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -345,7 +345,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_ggl-play {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 -189px;
     height: 33px;
@@ -354,8 +354,8 @@
 }
 
 .fri_star {
-  background-image: url('../images/icons-s10e2b72c93.png');
-  background-position: 0 -365px;
+  background-image: url('../images/icons-s78677ed0e1.png');
+  background-position: 0 -406px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -365,17 +365,17 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_star {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
-    background-position: 0 -333px;
+    background-position: 0 -371px;
     height: 10px;
     width: 11px;
   }
 }
 
 .fri_star-gray {
-  background-image: url('../images/icons-s10e2b72c93.png');
-  background-position: 0 -350px;
+  background-image: url('../images/icons-s78677ed0e1.png');
+  background-position: 0 -391px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -385,9 +385,9 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_star-gray {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
-    background-position: 0 -320px;
+    background-position: 0 -359px;
     height: 10px;
     width: 11px;
   }
@@ -440,7 +440,7 @@
 }
 
 .fri_five-stars {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 -181px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -451,7 +451,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_five-stars {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 -171px;
     height: 15px;
@@ -460,7 +460,7 @@
 }
 
 .fri_five-stars-current {
-  background-image: url('../images/icons-s10e2b72c93.png');
+  background-image: url('../images/icons-s78677ed0e1.png');
   background-position: 0 -161px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -471,7 +471,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_five-stars-current {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
     background-position: 0 -154px;
     height: 15px;
@@ -480,8 +480,8 @@
 }
 
 .fri_user-stats {
-  background-image: url('../images/icons-s10e2b72c93.png');
-  background-position: 0 -380px;
+  background-image: url('../images/icons-s78677ed0e1.png');
+  background-position: 0 -421px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -491,9 +491,9 @@
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .fri_user-stats {
-    background-image: url('../images/icons-2x-s23c2413a5a.png');
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
     background-size: 106px auto;
-    background-position: 0 -345px;
+    background-position: 0 -384px;
     height: 14px;
     width: 16px;
   }
@@ -515,6 +515,26 @@
   content: "";
   color: #737373;
   font-size: 100%;
+}
+
+.lips {
+  background-image: url('../images/icons-s78677ed0e1.png');
+  background-position: 0 -309px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  height: 36px;
+  width: 53px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  .lips {
+    background-image: url('../images/icons-2x-sf91cb84d59.png');
+    background-size: 106px auto;
+    background-position: 0 -289px;
+    height: 36px;
+    width: 53px;
+  }
 }
 
 html, body {
@@ -757,6 +777,10 @@ a {
   background-color: #00C89B;
 }
 
+.button_pink {
+  background-color: #ff4870;
+}
+
 .button_gray {
   background-color: #9b9b9b;
 }
@@ -766,6 +790,10 @@ a {
 
 .default-link:hover {
   text-decoration: underline;
+}
+
+.link-pink {
+  color: #ff4870;
 }
 
 .text-uppercase {
@@ -1504,4 +1532,13 @@ input[type=radio]:not(old):checked + label::before {
   line-height: 1;
   padding-top: 3px;
   top: -1px;
+}
+
+.instruction-app-install-wrapper {
+  background-color: #fff3f7;
+  padding: 20px 4px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
